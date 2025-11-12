@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 518.4 360.01">
+  <defs>
+    <style>
+      .cls-1 {
+        filter: url(#drop-shadow-6);
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+    <filter id="drop-shadow-6" x="26.54" y="19.56" width="466" height="321" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur" stdDeviation="5"/>
+      <feFlood flood-color="#000" flood-opacity=".3"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g class="cls-1">
+    <circle class="cls-3" cx="143.46" cy="136.66" r="101.11"/>
+    <circle class="cls-2" cx="374.94" cy="153.89" r="101.11"/>
+    <circle class="cls-2" cx="256.02" cy="223.36" r="101.11"/>
+  </g>
+</svg>

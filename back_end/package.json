@@ -1,0 +1,22 @@
+{
+  "name": "dalue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "aws-sdk": "^2.1692.0",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "koa-helmet": "^4.2.1",
+    "koa-json": "^2.0.2",
+    "koa-router": "^7.4.0",
+    "koa2-cors": "^2.0.6",
+    "koa2-ratelimit": "^1.1.1",
+    "sanitize-html": "^2.17.0"
+  },
+  "scripts": {
+    "start": "node ./app"
+  },
+  "author": "",
+  "license": "ISC"
+}
