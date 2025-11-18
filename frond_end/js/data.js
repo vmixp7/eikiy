@@ -7,6 +7,8 @@ const jsonData = {
     "goto_04": "加入大略",
     "goto_05": "聯絡我們",
     "goto_06": "投資人關係",
+    "goto_06_01": "公司治理",
+    "goto_06_02": "股東專區",
     "goto_07": "企業永續",
     "new_title": "最新消息",
     "service_title": "發展項目",
@@ -22,6 +24,19 @@ const jsonData = {
     "label_content": "內容",
     "placeholder": "請輸入內容",
     "submit": "讓我們保持聯繫",
+    "titleContents_a01": "組織架構",
+    "titleContents_a02": "董事會",
+    "titleContents_a03": "功能性委員",
+    "titleContents_a04": "公司重要規章",
+    "titleContents_a05": "內部稽核",
+    "titleContents_a06": "公司治理情形",
+    "titleContents_a07": "厲害人關係",
+    "titleContents_b01": "股東會",
+    "titleContents_b02": "財務資訊",
+    "titleContents_b03": "法說會",
+    "titleContents_b04": "重大訊息",
+    "titleContents_b05": "股價資訊",
+    "titleContents_b06": "服務作業",
     "about": {
       "slogan": "<span>永續生活</span><br>的起點",
       "slogan_en": "THE BEGINNING<br> OF ETERNITY",
@@ -145,6 +160,10 @@ const jsonData = {
       "disc_01": "<li>連續5 年榮獲MSCI ESG 評比「AA 領先等級」</li><li>獲時代雜誌Time 評選「2024 年全球 500 大永續企業」（World’s Most Sustainable Companies 2024），全球跨產業第 63 名</li>",
       "disc_02": "<li>2024 年 S & P Global 永續年鑑，連續 2 年名列產業別全球 Top 1% 最高榮譽肯定，為臺灣該產業唯一獲此亮眼成就的機構</li><li>大略國際獲碳中和驗證聲明書，持續致力推動各項減碳措施，加速實踐淨零</li>",
       "disc_03": "<li>大略國際 30 週年，訂定「認真永續．綠色生活」永續主張，秉持延續「認真」的精神，從三十邁向「永續」</li><li>獲CDP氣候變遷評等「領導等級A-」</li>"
+    },
+    "corporate_governance": {
+      "main_title": "公司治理",
+
     }
   },
   "en": {
@@ -155,6 +174,8 @@ const jsonData = {
     "goto_04": "Join Us",
     "goto_05": "Contact",
     "goto_06": "Investor Relations",
+    "goto_06_01": "Corporate Governance",
+    "goto_06_02": "Shareholder Area",
     "goto_07": "Corporate Sustainability",
     "new_title": "News",
     "service_title": "Development Projects",
@@ -170,6 +191,19 @@ const jsonData = {
     "label_content": "Content / Message",
     "placeholder": "Please enter your message",
     "submit": "Let's Keep in Touch",
+    "titleContents_a01": "Organizational Structure",
+    "titleContents_a02": "Board of Directors",
+    "titleContents_a03": "Functional Committees",
+    "titleContents_a04": "Important Company Rules and Regulations",
+    "titleContents_a05": "Internal Audit",
+    "titleContents_a06": "Corporate Governance Situation",
+    "titleContents_a07": "Stakeholder Relationships",
+    "titleContents_b01": "Shareholders Meeting",
+    "titleContents_b02": "Financial Information",
+    "titleContents_b03": "Investor Conference",
+    "titleContents_b04": "Major News",
+    "titleContents_b05": "Stock Price Information",
+    "titleContents_b06": "Service Operations",
     "about": {
       "slogan": "<span>The starting point of</span><br>sustainable living",
       "slogan_en": "THE BEGINNING<br> OF ETERNITY",
@@ -292,6 +326,9 @@ const jsonData = {
       "disc_01": "<li>Achieved MSCI ESG rating of 'AA Leader' for 5 consecutive years.</li><li>Named one of Time Magazine's 'World’s Most Sustainable Companies 2024,' ranking 63rd globally across all industries.</li>",
       "disc_02": "<li>Listed in the S&P Global Sustainability Yearbook for 2024, achieving the highest honor of being in the Top 1% globally for the industry for the second consecutive year, and is the only institution in this industry in Taiwan to achieve this outstanding result.</li><li>Da-Lueh International has obtained a carbon neutrality verification statement, continuously striving to promote various carbon reduction measures and accelerating the realization of net-zero.</li>",
       "disc_03": "<li>Marked Da-Lueh International's 30th anniversary with the sustainability proposition 'Diligent Sustainability, Green Living,' upholding the spirit of 'diligence' and transitioning from three decades towards 'sustainability.'</li><li>Received 'Leadership Level A-' rating in the CDP Climate Change assessment.</li>"
+    },
+    "corporate_governance": {
+
     }
   }
 }

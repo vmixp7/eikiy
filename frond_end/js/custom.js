@@ -68,6 +68,8 @@ function setDalueData(msg, lang) {
   $('.goto-04').html(msg.goto_04);
   $('.goto-05').html(msg.goto_05);
   $('.goto-06').html(msg.goto_06);
+  $('.goto-06-01').html(msg.goto_06_01);
+  $('.goto-06-02').html(msg.goto_06_02);
   $('.goto-07').html(msg.goto_07);
   $('.new-title').html(msg.new_title);
   $('.service-title').html(msg.service_title);
@@ -83,6 +85,21 @@ function setDalueData(msg, lang) {
   $('.label-content').html(msg.label_content);
   $('#content').attr("placeholder", msg.placeholder);
   $('.submit').html(msg.submit);
+
+  $('.titleContents-a01').html(msg.titleContents_a01);
+  $('.titleContents-a02').html(msg.titleContents_a02);
+  $('.titleContents-a03').html(msg.titleContents_a03);
+  $('.titleContents-a04').html(msg.titleContents_a04);
+  $('.titleContents-a05').html(msg.titleContents_a05);
+  $('.titleContents-a06').html(msg.titleContents_a06);
+  $('.titleContents-a07').html(msg.titleContents_a07);
+
+  $('.titleContents-b01').html(msg.titleContents_b01);
+  $('.titleContents-b02').html(msg.titleContents_b02);
+  $('.titleContents-b03').html(msg.titleContents_b03);
+  $('.titleContents-b04').html(msg.titleContents_b04);
+  $('.titleContents-b05').html(msg.titleContents_b05);
+  $('.titleContents-b06').html(msg.titleContents_b06);
 
   $('#investor_relations .main-title span').html(msg.investor_relations.main_title);
   $('.table1-title').html(msg.investor_relations.table1_title);
@@ -107,6 +124,14 @@ function setDalueData(msg, lang) {
   $('.disc-01').html(msg.corporate_sustainability.disc_01);
   $('.disc-02').html(msg.corporate_sustainability.disc_02);
   $('.disc-03').html(msg.corporate_sustainability.disc_03);
+
+  // $('#corporate_governance .main-title span').html(msg.corporate_governance.main_title);
+  // $('.text1-title').html(msg.corporate_governance.text1_title);
+  // $('.text1-content').html(msg.corporate_governance.text1_content);
+  // $('.text2-title').html(msg.corporate_governance.text2_title);
+  // $('.disc-01').html(msg.corporate_governance.disc_01);
+  // $('.disc-02').html(msg.corporate_governance.disc_02);
+  // $('.disc-03').html(msg.corporate_governance.disc_03);
 
   if (msg.about) {
     $('#gotothe-01 .main-title').html(msg.about.slogan);
