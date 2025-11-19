@@ -1104,6 +1104,12 @@ body {
   white-space: pre-wrap;
   text-align: justify;
 }
+.inside-cont .article-cont a {
+  color: #00be76;
+}
+.inside-cont .article-cont a:hover {
+  text-decoration: underline;
+}
 .inside-cont .article-cont ul.disc {
   list-style-type: disc;
   padding-inline-start: 20px;

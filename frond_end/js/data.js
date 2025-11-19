@@ -187,6 +187,17 @@ const jsonData = {
       "table8_td": "專責集團旗下事業之協調與監督，整合資源、追蹤績效，確保子公司營運方向與母公司策略一致。<br>下設：",
       "table8_disc": "<li>新事業一部、二部、三部：分別負責不同區域或業務領域之投資與營運推動，開發新市場與創新服務模式。</li>",
     }
+    "financial_information": {
+      "main_title": "財務資訊",
+      "table1_th": "年度",
+      "table2_th": "合併財務報告",
+      "table3_th": "年度報告",
+      "table_td_a1": "第 1 季財務報告書",
+      "table_td_a2": "第 2 季財務報告書",
+      "table_td_a3": "第 3 季財務報告書",
+      "table_td_a4": "第 4 季財務報告書",
+      "table_td_abook": "年報電子書",
+    }
   },
   "en": {
     "goto_home": "Home",
@@ -373,6 +384,17 @@ const jsonData = {
       "table8_th": "Subsidiary Management Department",
       "table8_td": "Dedicated to coordinating and supervising the group's businesses, integrating resources, tracking performance, and ensuring that the subsidiaries' operational direction is consistent with the parent company's strategy. <br>Subordinate to:",
       "table8_disc": "<li>New Business Units One, Two, and Three: Responsible for investment and operational promotion in different regions or business areas, developing new markets and innovative service models.</li>",
+    }
+    "financial_information": {
+      "main_title": "Financial Information",
+      "table1_th": "Annual",
+      "table2_th": "Consolidated Financial Reports",
+      "table3_th": "Annual Reports",
+      "table_td_a1": "First Quarter Financial Report",
+      "table_td_a2": "Second Quarter Financial Report",
+      "table_td_a3": "Third Quarter Financial Report",
+      "table_td_a4": "Fourth Quarter Financial Report",
+      "table_td_abook": "E-book of Annual Reports",
     }
   }
 }

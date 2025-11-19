@@ -151,6 +151,16 @@ function setDalueData(msg, lang) {
   $('.table8-td span').html(msg.functional_committees.table8_td);
   $('.table8-td .disc').html(msg.functional_committees.table8_disc);
 
+  $('#financial_information .main-title span').html(msg.financial_information.main_title);
+  $('.table-th-01').html(msg.functional_committees.table1_th);
+  $('.table-th-02').html(msg.functional_committees.table2_th);
+  $('.table-th-03').html(msg.functional_committees.table3_th);
+  $('.table-td .a1').html(msg.functional_committees.table_td_a1);
+  $('.table-td .a2').html(msg.functional_committees.table_td_a2);
+  $('.table-td .a3').html(msg.functional_committees.table_td_a3);
+  $('.table-td .a4').html(msg.functional_committees.table_td_a4);
+  $('.table-td .abook').html(msg.functional_committees.table_td_abook);
+
   if (msg.about) {
     $('#gotothe-01 .main-title').html(msg.about.slogan);
     $('.aboutSlogan_en').html(msg.about.slogan_en);
