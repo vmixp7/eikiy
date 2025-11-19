@@ -161,9 +161,46 @@ const jsonData = {
       "disc_02": "<li>2024 年 S & P Global 永續年鑑，連續 2 年名列產業別全球 Top 1% 最高榮譽肯定，為臺灣該產業唯一獲此亮眼成就的機構</li><li>大略國際獲碳中和驗證聲明書，持續致力推動各項減碳措施，加速實踐淨零</li>",
       "disc_03": "<li>大略國際 30 週年，訂定「認真永續．綠色生活」永續主張，秉持延續「認真」的精神，從三十邁向「永續」</li><li>獲CDP氣候變遷評等「領導等級A-」</li>"
     },
-    "corporate_governance": {
-      "main_title": "公司治理",
-
+    "corporate_title1": "公司治理",
+    "corporate_title2": "股東專區",
+    "company_img": "https://da-lue-images.s3.ap-southeast-1.amazonaws.com/inverstor/organize_tw.jpg",
+    "functional_committees": {
+      "content": `<h3 class="title">大略國際控股有限公司（Da Lue International Holding Co.,
+                                Ltd.，以下簡稱「本公司」）為設立於英屬開曼群島之投資控股公司，主要轉投資事業涵蓋婚禮、酒店及婚紗攝影等相關產業。
+      本公司依據公司治理原則，建立完善之管理架構及明確之權責分工，以確保營運效率、決策透明與永續發展。
+                            </h3 >
+                            <h4>▪️ 股東會</h4>
+                            <p>為公司最高權力機構，負責選任董事、監督經營團隊運作，並審議公司重大方針與財務報告。</p>
+                            <h4>▪️ 董事會</h4>
+                            <p>為公司主要決策單位，負責審議營運策略、投資計畫及重大政策，確保公司之永續經營與股東權益最大化。
+                            </p>
+                            <h4>董事會下設：</h4>
+                            <p>•審計委員會：負責監督公司財務報表、內部控制及稽核制度之有效性。</p>
+                            <p>•薪酬委員會：負責董事及高階主管之薪酬政策與獎酬制度，維護公司治理公正性。</p>
+                            <h4>▪️ 董事長</h4>
+                            <p>統籌公司整體經營方向與發展策略，並領導董事會運作。設有：</p>
+                            <p>•策略長：協助規劃長期營運藍圖與集團發展方向。</p>
+                            <p>•專業顧問：提供產業趨勢與經營決策之專業建議。</p>
+                            <h4>▪️ 稽核室</h4>
+                            <p>隸屬董事會，獨立運作，負責內部稽核及內控制度之檢核，確保各單位遵循公司政策及法令規範。</p>
+                            <h4>▪️ 總經理室</h4>
+                            <p>由總經理統籌公司營運及轉投資事業管理，負責年度計畫執行、資源分配及績效追蹤，確保公司策略有效落實。</p>
+                            <h4>▪️ 財會處</h4>
+                            <p>負責公司財務管理、會計作業與資金調度，確保財務穩健及營運效率。</p>
+                            <p>•會計部：編製財務報表、成本分析及稅務申報。</p>
+                            <p>財務部：負責資金運用、預算編列及投資規劃。</p>
+                            <h4>▪️ 行政處</h4>
+                            <p>統籌公司內部行政、人事、資訊及法務事宜，支援各部門日常運作。</p>
+                            <p>•人力資源部：負責人員招募、培訓、績效管理及企業文化推動。</p>
+                            <p>總務部：管理辦公環境、採購與行政支援事務。</p>
+                            <p>資訊管理部：規劃與維護資訊系統及資安管理。</p>
+                            <p>•法務部：提供法律諮詢、契約審閱與風險控管。</p>
+                            <h4>▪️ 行銷暨公關部</h4>
+                            <p>負責品牌行銷策略、媒體宣傳與公關活動規劃，提升公司及轉投資事業之市場能見度與形象價值。</p>
+                            <h4>▪️ 子公司管理處</h4>
+                            <p>專責集團旗下事業之協調與監督，整合資源、追蹤績效，確保子公司營運方向與母公司策略一致。</p>
+                            <p>下設：</p>
+                            <p>新事業一部、二部、三部：分別負責不同區域或業務領域之投資與營運推動，開發新市場與創新服務模式。</p>`,
     }
   },
   "en": {
@@ -327,8 +364,72 @@ const jsonData = {
       "disc_02": "<li>Listed in the S&P Global Sustainability Yearbook for 2024, achieving the highest honor of being in the Top 1% globally for the industry for the second consecutive year, and is the only institution in this industry in Taiwan to achieve this outstanding result.</li><li>Da-Lueh International has obtained a carbon neutrality verification statement, continuously striving to promote various carbon reduction measures and accelerating the realization of net-zero.</li>",
       "disc_03": "<li>Marked Da-Lueh International's 30th anniversary with the sustainability proposition 'Diligent Sustainability, Green Living,' upholding the spirit of 'diligence' and transitioning from three decades towards 'sustainability.'</li><li>Received 'Leadership Level A-' rating in the CDP Climate Change assessment.</li>"
     },
-    "corporate_governance": {
+    "corporate_title1": "Corporate Governance",
+    "corporate_title2": "Shareholder Area",
+    "company_img": "https://da-lue-images.s3.ap-southeast-1.amazonaws.com/inverstor/organize_en.jpg",
+    "functional_committees": {
+      "content": `<h3 class="title">
+Da Lue International Holding Co., Ltd. (hereinafter referred to as “the Company”) is an investment holding company established in the Cayman Islands. The Company primarily invests in businesses related to weddings, hotels, and bridal photography.
+In accordance with corporate governance principles, the Company has established a comprehensive management structure and clear division of responsibilities to ensure operational efficiency, decision-making transparency, and sustainable development.
+</h3>
 
+<h4>▪️ Shareholders’ Meeting</h4>
+<p>
+As the Company’s highest authority, it is responsible for electing directors, supervising the management team’s operations, and reviewing major corporate policies and financial reports.
+</p>
+
+<h4>▪️ Board of Directors</h4>
+<p>
+The main decision-making body of the Company, responsible for reviewing business strategies, investment plans, and key policies to ensure sustainable operations and maximize shareholder value.
+</p>
+
+<h4>Subcommittees under the Board:</h4>
+<p>• Audit Committee: Responsible for overseeing the effectiveness of financial reports, internal controls, and audit systems.</p>
+<p>• Remuneration Committee: Responsible for the compensation policies and reward mechanisms for directors and senior executives, ensuring fairness in corporate governance.</p>
+
+<h4>▪️ Chairman</h4>
+<p>
+Oversees the Company’s overall business direction and development strategies, and leads the operations of the Board. The following positions are established:
+</p>
+<p>• Chief Strategy Officer: Assists in planning long-term business development and group strategic direction.</p>
+<p>• Professional Advisors: Provide expert insights on industry trends and business decision-making.</p>
+
+<h4>▪️ Audit Office</h4>
+<p>
+An independent unit under the Board of Directors, responsible for internal audits and inspections of internal control systems to ensure compliance with corporate policies and legal regulations across all departments.
+</p>
+
+<h4>▪️ Office of the General Manager</h4>
+<p>
+Led by the General Manager, responsible for overseeing corporate operations and managing subsidiaries. The office handles annual plan execution, resource allocation, and performance tracking to ensure effective implementation of company strategies.
+</p>
+
+<h4>▪️ Finance & Accounting Division</h4>
+<p>Responsible for financial management, accounting operations, and capital allocation to ensure financial stability and operational efficiency.</p>
+<p>• Accounting Department: Prepares financial statements, conducts cost analysis, and manages tax filings.</p>
+<p>• Finance Department: Responsible for fund management, budget planning, and investment arrangements.</p>
+
+<h4>▪️ Administration Division</h4>
+<p>Oversees corporate administration, human resources, information systems, and legal affairs, supporting daily operations across departments.</p>
+<p>• Human Resources Department: Responsible for recruitment, training, performance management, and corporate culture development.</p>
+<p>• General Affairs Department: Manages office environment, procurement, and administrative support.</p>
+<p>• Information Management Department: Plans and maintains information systems and cybersecurity management.</p>
+<p>• Legal Department: Provides legal consultation, contract review, and risk control.</p>
+
+<h4>▪️ Marketing & Public Relations Department</h4>
+<p>
+Responsible for brand marketing strategies, media communications, and public relations activities to elevate the visibility and brand value of the Company and its subsidiaries.
+</p>
+
+<h4>▪️ Subsidiary Management Division</h4>
+<p>
+Dedicated to coordination and oversight of the Company’s subsidiaries, including resource integration and performance monitoring, ensuring alignment between subsidiary operations and parent company strategies.
+</p>
+<p>Subdivided into:</p>
+<p>
+New Business Division I, II, and III: Each responsible for investment and business development in different regions or sectors, focusing on market expansion and innovative service models.
+</p>
+`
     }
   }
 }

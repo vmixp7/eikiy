@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>大略國際 | 企業永續</title>
+    <meta name='description' content="大略國際以「永續經營、創新突破、共榮共享」為核心精神，大略國際控股致力成為引領產業轉型、創造社會價值的標竿企業。" />
+    <meta name='keywords' content="大略國際, 永續生活, 經營, 社會價值, 創新突破" />
+    <meta property="og:title" content="大略國際控股有限公司 | 最新消息" />
+    <meta property="og:description" content="大略國際以「永續經營、創新突破、共榮共享」為核心精神，大略國際控股致力成為引領產業轉型、創造社會價值的標竿企業。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="images/share_pic_251021.jpg" />
+    <meta property="og:url" content="#" />
+
+    <link rel="shortcut icon" href="images/dalue.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css?v=2.1">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Pushy -->
+    <link rel="stylesheet" href="mobilemenu/pushy.css">
+
+    <!-- animate -->
+    <script src="js/wow.js"></script>
+    <script>
+        $(function () {
+            new WOW().init();
+        });
+
+        // header
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 120) {
+                $('.dalue-header').addClass('menu-bgcolor');
+            } else {
+                $('.dalue-header').removeClass('menu-bgcolor');
+            }
+        });
+
+
+        // service tab
+        $(function () {
+            $('.service .photo').hide();
+            $('#info01').show();
+        });
+        $(function () {
+            $('.tab-title li').click(function () {
+                $(this).parents().find('li').removeClass('choose');
+                $(this).addClass("choose");
+                return false;
+            });
+            $('#tab01').click(function () {
+                $(this).parents().parents().find('.photo').hide();
+                $('#info01').show();
+                return false;
+            });
+            $('#tab02').click(function () {
+                $(this).parents().parents().find('.photo').hide();
+                $('#info02').show();
+                return false;
+            });
+            $('#tab03').click(function () {
+                $(this).parents().parents().find('.photo').hide();
+                $('#info03').show();
+                return false;
+            });
+            $('#tab04').click(function () {
+                $(this).parents().parents().find('.photo').hide();
+                $('#info04').show();
+                return false;
+            });
+            $('#tab05').click(function () {
+                $(this).parents().parents().find('.photo').hide();
+                $('#info05').show();
+                return false;
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <!-- Pushy Menu -->
+    <nav class="pushy pushy-right" data-focus="#first-link">
+        <div class="pushy-content">
+            <ul>
+                <li class="pushy-link">
+                    <a class="goto-home" href="index.html"></a>
+                </li>
+                <li class="pushy-link">
+                    <a class="goto-01"></a>
+                </li>
+                <li class="pushy-link">
+                    <a class="goto-02"></a>
+                </li>
+                <li class="pushy-link">
+                    <a class="goto-03"></a>
+                </li>
+                <li class="pushy-link">
+                    <a class="goto-06" href="corporate_governance.html"></a>
+                </li>
+                <li class="pushy-link">
+                    <a class="goto-07" href="corporate-sustainability.html"></a>
+                </li>
+                <li class="pushy-link">
+                    <a class="goto-04"></a>
+                </li>
+                <li class="pushy-link">
+                    <a class="goto-05"></a>
+                </li>
+            </ul>
+            <!-- <div class="button-mob-wrapper">
+                <div class="button-inner-wrapper turn-on">
+                    <button id="js-button-mob" class="js-button-mob primary--button"></button>
+                </div>
+            </div> -->
+            <div class="the-select">
+                <select class="select_lang">
+                    <option selected value="tw">TW</option>
+                    <option value="en">EN</option>
+                </select>
+            </div>
+            <p class="text">大略國際 DA LUE INTERNATIONAL<br>
+                <br>
+                <span class="ss">Copyrights Ⓒ 2025 All Rights Reserved.</span>
+            </p>
+        </div>
+    </nav>
+    <!-- Site Overlay -->
+    <div class="site-overlay"></div>
+
+    <div id="container">
+        <!-- header -->
+        <header class="dalue-header">
+            <div class="middle-cont">
+                <a class="logo" href="index.html">
+                    <img src="images/logo.png" alt="大略國際">
+                </a>
+                <nav class="menu">
+                    <ul>
+                        <li><a class="goto-01"></a></li>
+                        <li><a class="goto-02"></a></li>
+                        <li><a class="goto-03"></a></li>
+                        <li><a class="goto-06" href="corporate_governance.html"></a></li>
+                        <li><a class="goto-07" href="corporate-sustainability.html"></a></li>
+                        <li><a class="goto-04"></a></li>
+                        <li><a class="goto-05"></a></li>
+                    </ul>
+                    <!-- <div class="button-outer-wrapper">
+                        <div class="button-inner-wrapper turn-on">
+                            <button id="js-button" class="js-button primary--button"></button>
+                        </div>
+                    </div> -->
+                    <div class="the-select">
+                        <select class="select_lang">
+                            <option selected value="tw">TW</option>
+                            <option value="en">EN</option>
+                        </select>
+                    </div>
+                </nav>
+                <button class="menu-btn">
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- main -->
+        <main id="functional_committees" class="dalue-container inside-cont">
+            <!-- cover -->
+            <section class="dalue-cont top-cover bg-cover-02">
+                <div class="middle-cont">
+                    <div class="text-info">
+                        <h2 class="subtitle">Corporate sustainability</h2>
+                    </div>
+                    <h1 class="main-title"><span></span></h1>
+                </div>
+                <svg class="s-first-section-svg" viewBox="0 0 160 100" preserveAspectRatio="none meet">
+                    <defs>
+                        <linearGradient id="grad">
+                            <stop offset="1" stop-color="#ffffff"></stop>
+                        </linearGradient>
+                    </defs>
+                    <g fill="url(#grad)">
+                        <path d="M0,0 Q80,200 160,0 L160,100 L0,100"></path>
+                    </g>
+                </svg>
+            </section>
+
+            <!-- content -->
+            <section class="">
+                <div class="middle-cont">
+                    <div class="article-cont">
+                        <div class="content">
+                            <h3 class="title">大略國際控股有限公司（Da Lue International Holding Co.,
+                                Ltd.，以下簡稱「本公司」）為設立於英屬開曼群島之投資控股公司，主要轉投資事業涵蓋婚禮、酒店及婚紗攝影等相關產業。
+                                本公司依據公司治理原則，建立完善之管理架構及明確之權責分工，以確保營運效率、決策透明與永續發展。
+                            </h3>
+                            <h4>▪️ 股東會</h4>
+                            <p>為公司最高權力機構，負責選任董事、監督經營團隊運作，並審議公司重大方針與財務報告。</p>
+                            <h4>▪️ 董事會</h4>
+                            <p>為公司主要決策單位，負責審議營運策略、投資計畫及重大政策，確保公司之永續經營與股東權益最大化。
+                            </p>
+                            <h4>董事會下設：</h4>
+                            <p>•審計委員會：負責監督公司財務報表、內部控制及稽核制度之有效性。</p>
+                            <p>•薪酬委員會：負責董事及高階主管之薪酬政策與獎酬制度，維護公司治理公正性。</p>
+                            <h4>▪️ 董事長</h4>
+                            <p>統籌公司整體經營方向與發展策略，並領導董事會運作。設有：</p>
+                            <p>•策略長：協助規劃長期營運藍圖與集團發展方向。</p>
+                            <p>•專業顧問：提供產業趨勢與經營決策之專業建議。</p>
+                            <h4>▪️ 稽核室</h4>
+                            <p>隸屬董事會，獨立運作，負責內部稽核及內控制度之檢核，確保各單位遵循公司政策及法令規範。</p>
+                            <h4>▪️ 總經理室</h4>
+                            <p>由總經理統籌公司營運及轉投資事業管理，負責年度計畫執行、資源分配及績效追蹤，確保公司策略有效落實。</p>
+                            <h4>▪️ 財會處</h4>
+                            <p>負責公司財務管理、會計作業與資金調度，確保財務穩健及營運效率。</p>
+                            <p>•會計部：編製財務報表、成本分析及稅務申報。</p>
+                            <p>財務部：負責資金運用、預算編列及投資規劃。</p>
+                            <h4>▪️ 行政處</h4>
+                            <p>統籌公司內部行政、人事、資訊及法務事宜，支援各部門日常運作。</p>
+                            <p>•人力資源部：負責人員招募、培訓、績效管理及企業文化推動。</p>
+                            <p>總務部：管理辦公環境、採購與行政支援事務。</p>
+                            <p>資訊管理部：規劃與維護資訊系統及資安管理。</p>
+                            <p>•法務部：提供法律諮詢、契約審閱與風險控管。</p>
+                            <h4>▪️ 行銷暨公關部</h4>
+                            <p>負責品牌行銷策略、媒體宣傳與公關活動規劃，提升公司及轉投資事業之市場能見度與形象價值。</p>
+                            <h4>▪️ 子公司管理處</h4>
+                            <p>專責集團旗下事業之協調與監督，整合資源、追蹤績效，確保子公司營運方向與母公司策略一致。</p>
+                            <p>下設：</p>
+                            <p>新事業一部、二部、三部：分別負責不同區域或業務領域之投資與營運推動，開發新市場與創新服務模式。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="back_button">
+                    <a href="" class="back_link">← Back</a>
+                </div>
+            </section>
+
+
+
+        </main>
+
+        <!-- footer -->
+        <footer class="footer-cont">
+            <div class="middle-cont">
+                <div class="logo-s">
+                    <img src="images/logo.png" alt="大略國際">
+                </div>
+                <p class="copyright">Copyright © 2025 大略國際 All rights reserved.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- pushy JS -->
+    <script src="mobilemenu/pushy.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- sample data JS -->
+    <script src="js/data.js?v=1.1"></script>
+    <!-- AJAX JS -->
+    <script src="js/custom.js?v=19"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: 3000,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            // Responsive breakpoints
+            breakpoints: {
+                // when window width is >= 320px
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                },
+                // when window width is >= 480px
+                480: {
+                    slidesPerView: 2,
+                    spaceBetween: 30
+                },
+                // when window width is >= 640px
+                900: {
+                    slidesPerView: 3,
+                    spaceBetween: 40
+                },
+                1200: {
+                    slidesPerView: 3,
+                    spaceBetween: 40
+                }
+            }
+        });
+        $(document).ready(function () {
+            const parameters = new URLSearchParams(window.location.search);
+            const lang = parameters.get('lang') || 'tw';
+            console.log('lang--', lang);
+            $('.select_lang').val(lang);
+            $('.logo,.goto-home,.goto-01,.goto-02,.goto-03,.goto-04,.goto-05,.back_link').attr('href', 'index.html?lang=' + lang);
+            $('.goto-06').attr('href', 'corporate_governance.html?lang=' + lang);
+            $('.goto-07').attr('href', 'corporate-sustainability.html?lang=' + lang);
+            if (lang === 'en') {
+                $('#container').addClass('for-en');
+            } else {
+                $('#container').remove('for-en');
+            }
+            const datas = getLocalStorage(lang);
+            setDalueData(datas, lang);
+        });
+    </script>
+
+</body>
+
+</html>

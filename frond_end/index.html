@@ -5,9 +5,12 @@
     <!-- 基本 -->
     <title> 大略國際控股有限公司 | 永續生活的起點 Da Lue International Holdings Ltd.</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="description" content="大略國際以「永續經營、創新突破、共榮共享」為核心精神，致力於推動綠能、旅遊、飯店與多元事業發展，成為引領產業轉型與創造社會價值的標竿企業。 Da Lue International upholds the spirit of sustainability, innovation, and shared prosperity — leading industrial transformation through green energy, tourism, and hospitality." />
-    <meta name="keywords" content="大略國際, Da Lue International, 永續生活, 經營理念, 綠能發展, 飯店事業, 旅遊投資, 社會責任, 創新企業, 共榮共享, sustainability, innovation, green energy, hospitality, ESG, investment" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description"
+        content="大略國際以「永續經營、創新突破、共榮共享」為核心精神，致力於推動綠能、旅遊、飯店與多元事業發展，成為引領產業轉型與創造社會價值的標竿企業。 Da Lue International upholds the spirit of sustainability, innovation, and shared prosperity — leading industrial transformation through green energy, tourism, and hospitality." />
+    <meta name="keywords"
+        content="大略國際, Da Lue International, 永續生活, 經營理念, 綠能發展, 飯店事業, 旅遊投資, 社會責任, 創新企業, 共榮共享, sustainability, innovation, green energy, hospitality, ESG, investment" />
     <meta name="application-name" content="大略國際控股有限公司 Da Lue International Holdings Ltd." />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
@@ -31,7 +34,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="大略國際控股有限公司 Da Lue International Holdings Ltd." />
     <meta property="og:title" content="大略國際控股有限公司 | 永續生活的起點 Da Lue International Holdings Ltd." />
-    <meta property="og:description"content="以「永續經營、創新突破、共榮共享」為核心精神，推動綠能、旅遊、飯店與多元產業發展，創造社會價值與永續未來。Committing to sustainability, innovation, and shared prosperity." />
+    <meta property="og:description"
+        content="以「永續經營、創新突破、共榮共享」為核心精神，推動綠能、旅遊、飯店與多元產業發展，創造社會價值與永續未來。Committing to sustainability, innovation, and shared prosperity." />
     <meta property="og:url" content="https://www.dalue.com.tw/" />
     <meta property="og:image" content="images/share_pic_251021.jpg" />
     <meta property="og:locale" content="zh_TW" />
@@ -156,7 +160,7 @@
     <link rel="stylesheet" href="mobilemenu/pushy.css" />
 
     <!-- animate -->
-    <script src="js/dalue.js"></script> 
+    <script src="js/dalue.js"></script>
     <script src="js/wow.js"></script>
     <script>
         $(function () {
@@ -184,12 +188,10 @@
                     <a class="goto-03"></a>
                 </li>
                 <li class="pushy-link">
-                    <a class="goto-06"></a>
-                    <a class="goto-06-01"></a>
-                    <a class="goto-06-02"></a>
+                    <a class="goto-06" href="corporate_governance.html"></a>
                 </li>
                 <li class="pushy-link">
-                    <a class="goto-07"></a>
+                    <a class="goto-07" href="corporate-sustainability.html"></a>
                 </li>
                 <li class="pushy-link">
                     <a class="goto-04"></a>
@@ -227,14 +229,8 @@
                         <li><a class="goto-01"></a></li>
                         <li><a class="goto-02"></a></li>
                         <li><a class="goto-03"></a></li>
-                        <li class="arr">
-                            <a class="goto-06"></a>
-                            <div class="sub-link">
-                               <a class="goto-06-01"></a>
-                               <a class="goto-06-02"></a>
-                            </div>
-                        </li>
-                        <li><a class="goto-07"></a></li>
+                        <li><a class="goto-06" href="corporate_governance.html"></a></li>
+                        <li><a class="goto-07" href="corporate-sustainability.html"></a></li>
                         <li><a class="goto-04"></a></li>
                         <li><a class="goto-05"></a></li>
                     </ul>
@@ -463,7 +459,7 @@
 
             // FIX: APIURL 守衛與相對路徑後備
             var apiBase = typeof APIURL === "string" && APIURL ? APIURL : "";
-            var url = apiBase ? APIURL + "/api/daLue" : "/api/daLue";
+            var url = apiBase ? APIURL + "/api/daLue2" : "/api/daLue2";
 
             $.ajax({
                 url: url,
@@ -503,9 +499,7 @@
 
         // 導航帶語系參數（保留原本行為）
         $(".logo,.goto-home").attr("href", "index.html?lang=" + lang);
-        // $(".goto-06").attr("href", "investor-relations.html?lang=" + lang);
-        $(".goto-06-01").attr("href", "corporate_governance.html?lang=" + lang);
-        $(".goto-06-02").attr("href", "shareholder_area.html?lang=" + lang);
+        $(".goto-06").attr("href", "corporate_governance.html?lang=" + lang);
         $(".goto-07").attr(
             "href",
             "corporate-sustainability.html?lang=" + lang,
