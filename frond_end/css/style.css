@@ -1570,6 +1570,11 @@ body {
   #company_img {
     width: 90%;
   }
+
+  .dalue-container .main-cover .img-circle {
+    width: 90%;
+    position: initial;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

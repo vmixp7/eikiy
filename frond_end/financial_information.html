@@ -23,7 +23,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css?v=2.3">
+    <link rel="stylesheet" href="css/style.css?v=21">
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="mobilemenu/pushy.css">
 
     <!-- animate -->
-    <script src="js/dalue.js"></script>
+    <script src="js/dalue.js?v=11"></script>
     <script src="js/wow.js"></script>
     <script>
         $(function () {
@@ -293,7 +293,7 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- sample data JS -->
-    <script src="js/data.js?v=1.6"></script>
+    <script src="js/data.js?v=17"></script>
     <!-- AJAX JS -->
     <script src="js/custom.js?v=22"></script>
 
@@ -338,7 +338,6 @@
         $(document).ready(function () {
             const parameters = new URLSearchParams(window.location.search);
             const lang = parameters.get('lang') || 'tw';
-            console.log('lang--', lang);
             $('.select_lang').val(lang);
             $('.logo,.goto-home,.goto-01,.goto-02,.goto-03,.goto-04,.goto-05').attr('href', 'index.html?lang=' + lang);
             $('.goto-06,.back_link').attr('href', 'corporate_governance.html?lang=' + lang);

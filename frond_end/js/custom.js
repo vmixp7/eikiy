@@ -59,7 +59,6 @@ const APIURL = 'http://13.213.0.131:3009';
 })(jQuery);
 
 function setDalueData(msg, lang) {
-  console.log('lang----------', lang);
   console.log('setDalueData--', msg);
   $('.goto-home').html(msg.goto_home);
   $('.goto-01').html(msg.goto_01);

@@ -152,7 +152,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css?v=2.2" />
+    <link rel="stylesheet" href="css/style.css?v=21" />
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -160,7 +160,7 @@
     <link rel="stylesheet" href="mobilemenu/pushy.css" />
 
     <!-- animate -->
-    <script src="js/dalue.js"></script>
+    <script src="js/dalue.js?v=11"></script>
     <script src="js/wow.js"></script>
     <script>
         $(function () {
@@ -259,12 +259,12 @@
                         THE BEGINNING<br />
                         OF ETERNITY
                     </p>
+                    <div class="img-circle">
+                        <img src="images/circle.svg" />
+                    </div>
                     <div class="text-info">
                         <h2 class="subtitle aboutTitle"></h2>
                         <p class="subtitle-p aboutText"></p>
-                    </div>
-                    <div class="img-circle">
-                        <img src="images/circle.svg" />
                     </div>
                 </div>
             </section>
@@ -390,11 +390,11 @@
     integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
     crossorigin="anonymous"></script>
 <!-- sample data JS -->
-<script src="js/data.js?v=1.4"></script>
+<script src="js/data.js?v=17"></script>
 <!-- AJAX JS -->
-<script src="js/custom.js?v=20"></script>
+<script src="js/custom.js?v=21"></script>
 <script>
-    // FIX: Swiper v11 的 autoplay 正確寫法
+    var version = "20251119.2";
     var swiper = new Swiper(".swiper-container", {
         slidesPerView: 3,
         spaceBetween: 30,
@@ -454,8 +454,13 @@
     // FIX: 統一資料進場流程—先快取、後 API、失敗回離線
     function ensureData(lang) {
         return new Promise(function (resolve) {
-            const cached = getCachedByLang(lang);
-            if (cached) return resolve(getCachedAll());
+            // const cached = getCachedByLang(lang);
+            // if (cached) return resolve(getCachedAll());
+
+            if (version == localStorage.getItem("version")) {
+                console.log("--------------get Cache------------")
+                return resolve(getCachedAll());
+            }
 
             // FIX: APIURL 守衛與相對路徑後備
             var apiBase = typeof APIURL === "string" && APIURL ? APIURL : "";
@@ -468,8 +473,11 @@
                 timeout: 10000,
             })
                 .done(function (datas) {
+                    console.log("--------------get api success------------")
                     try {
+                        console.log("datas--", datas);
                         setLocalStorage(datas);
+                        localStorage.setItem("version", version);
                     } catch (e) { }
                     try {
                         setCache(datas);
@@ -477,7 +485,7 @@
                     resolve(datas);
                 })
                 .fail(function () {
-                    console.log("--------------api fail------------")
+                    console.log("--------------get api fail------------")
                     window.jsonData = jsonData
                     // FIX: API 失敗 → 採用離線資料（內嵌 jsonData）
                     try {
@@ -494,7 +502,6 @@
     $(document).ready(function () {
         const parameters = new URLSearchParams(window.location.search);
         const lang = parameters.get("lang") || "tw";
-        console.log("lang--", lang);
         $(".select_lang").val(lang);
 
         // 導航帶語系參數（保留原本行為）
@@ -531,8 +538,10 @@
             })
             .catch(function (err) {
                 console.error("資料初始化失敗：", err);
+                console.log("setDalueData--", setDalueData);
                 // 最終保底
                 if (typeof setDalueData === "function") {
+                    console.log("--------------get jsonData------------")
                     setDalueData(window.jsonData, lang);
                 }
             });
