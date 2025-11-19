@@ -86,20 +86,20 @@ function setDalueData(msg, lang) {
   $('#content').attr("placeholder", msg.placeholder);
   $('.submit').html(msg.submit);
 
-  $('.titleContents-a01').html(msg.titleContents_a01);
-  $('.titleContents-a02').html(msg.titleContents_a02);
-  $('.titleContents-a03').html(msg.titleContents_a03);
-  $('.titleContents-a04').html(msg.titleContents_a04);
-  $('.titleContents-a05').html(msg.titleContents_a05);
-  $('.titleContents-a06').html(msg.titleContents_a06);
-  $('.titleContents-a07').html(msg.titleContents_a07);
+  $('.titleContents-a01 span').html(msg.titleContents_a01);
+  $('.titleContents-a02 span').html(msg.titleContents_a02);
+  $('.titleContents-a03 span').html(msg.titleContents_a03);
+  $('.titleContents-a04 span').html(msg.titleContents_a04);
+  $('.titleContents-a05 span').html(msg.titleContents_a05);
+  $('.titleContents-a06 span').html(msg.titleContents_a06);
+  $('.titleContents-a07 span').html(msg.titleContents_a07);
 
-  $('.titleContents-b01').html(msg.titleContents_b01);
-  $('.titleContents-b02').html(msg.titleContents_b02);
-  $('.titleContents-b03').html(msg.titleContents_b03);
-  $('.titleContents-b04').html(msg.titleContents_b04);
-  $('.titleContents-b05').html(msg.titleContents_b05);
-  $('.titleContents-b06').html(msg.titleContents_b06);
+  $('.titleContents-b01 span').html(msg.titleContents_b01);
+  $('.titleContents-b02 span').html(msg.titleContents_b02);
+  $('.titleContents-b03 span').html(msg.titleContents_b03);
+  $('.titleContents-b04 span').html(msg.titleContents_b04);
+  $('.titleContents-b05 span').html(msg.titleContents_b05);
+  $('.titleContents-b06 span').html(msg.titleContents_b06);
 
   $('#investor_relations .main-title span').html(msg.investor_relations.main_title);
   $('.table1-title').html(msg.investor_relations.table1_title);
@@ -117,6 +117,9 @@ function setDalueData(msg, lang) {
   $('.table2-td-02').html(msg.investor_relations.table2_td_02);
   $('.table2-td-03').html(msg.investor_relations.table2_td_03);
 
+  $('.text-title1').html(msg.investor_relations.text_title1);
+  $('.text-title2').html(msg.investor_relations.text_title2);
+
   $('#corporate_sustainability .main-title span').html(msg.corporate_sustainability.main_title);
   $('.text1-title').html(msg.corporate_sustainability.text1_title);
   $('.text1-content').html(msg.corporate_sustainability.text1_content);
@@ -125,13 +128,28 @@ function setDalueData(msg, lang) {
   $('.disc-02').html(msg.corporate_sustainability.disc_02);
   $('.disc-03').html(msg.corporate_sustainability.disc_03);
 
-  // $('#corporate_governance .main-title span').html(msg.corporate_governance.main_title);
-  // $('.text1-title').html(msg.corporate_governance.text1_title);
-  // $('.text1-content').html(msg.corporate_governance.text1_content);
-  // $('.text2-title').html(msg.corporate_governance.text2_title);
-  // $('.disc-01').html(msg.corporate_governance.disc_01);
-  // $('.disc-02').html(msg.corporate_governance.disc_02);
-  // $('.disc-03').html(msg.corporate_governance.disc_03);
+  $('#functional_committees .main-title span').html(msg.functional_committees.main_title);
+  $('.text1-content').html(msg.functional_committees.text1_content);
+  $('.table1-th').html(msg.functional_committees.table1_th);
+  $('.table1-td span').html(msg.functional_committees.table1_td);
+  $('.table2-th').html(msg.functional_committees.table2_th);
+  $('.table2-td span').html(msg.functional_committees.table2_td);
+  $('.table2-td .disc').html(msg.functional_committees.table2_disc);
+  $('.table3-th').html(msg.functional_committees.table3_th);
+  $('.table3-td span').html(msg.functional_committees.table3_td);
+  $('.table4-th').html(msg.functional_committees.table4_th);
+  $('.table4-td span').html(msg.functional_committees.table4_td);
+  $('.table5-th').html(msg.functional_committees.table5_th);
+  $('.table5-td span').html(msg.functional_committees.table5_td);
+  $('.table5-td .disc').html(msg.functional_committees.table5_disc);
+  $('.table6-th').html(msg.functional_committees.table6_th);
+  $('.table6-td span').html(msg.functional_committees.table6_td);
+  $('.table6-td .disc').html(msg.functional_committees.table6_disc);
+  $('.table7-th').html(msg.functional_committees.table7_th);
+  $('.table7-td span').html(msg.functional_committees.table7_td);
+  $('.table8-th').html(msg.functional_committees.table8_th);
+  $('.table8-td span').html(msg.functional_committees.table8_td);
+  $('.table8-td .disc').html(msg.functional_committees.table8_disc);
 
   if (msg.about) {
     $('#gotothe-01 .main-title').html(msg.about.slogan);

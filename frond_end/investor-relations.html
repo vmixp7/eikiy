@@ -3,9 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>大略國際 | 投資人關係</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>大略國際 | 公司治理</title>
     <meta name='description' content="大略國際以「永續經營、創新突破、共榮共享」為核心精神，大略國際控股致力成為引領產業轉型、創造社會價值的標竿企業。" />
     <meta name='keywords' content="大略國際, 永續生活, 經營, 社會價值, 創新突破" />
     <meta property="og:title" content="大略國際控股有限公司 | 最新消息" />
@@ -23,7 +22,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css?v=2.1">
+    <link rel="stylesheet" href="css/style.css?v=2.3">
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -31,58 +30,11 @@
     <link rel="stylesheet" href="mobilemenu/pushy.css">
 
     <!-- animate -->
+    <script src="js/dalue.js"></script> 
     <script src="js/wow.js"></script>
     <script>
         $(function () {
             new WOW().init();
-        });
-
-        // header
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 120) {
-                $('.dalue-header').addClass('menu-bgcolor');
-            } else {
-                $('.dalue-header').removeClass('menu-bgcolor');
-            }
-        });
-
-
-        // service tab
-        $(function () {
-            $('.service .photo').hide();
-            $('#info01').show();
-        });
-        $(function () {
-            $('.tab-title li').click(function () {
-                $(this).parents().find('li').removeClass('choose');
-                $(this).addClass("choose");
-                return false;
-            });
-            $('#tab01').click(function () {
-                $(this).parents().parents().find('.photo').hide();
-                $('#info01').show();
-                return false;
-            });
-            $('#tab02').click(function () {
-                $(this).parents().parents().find('.photo').hide();
-                $('#info02').show();
-                return false;
-            });
-            $('#tab03').click(function () {
-                $(this).parents().parents().find('.photo').hide();
-                $('#info03').show();
-                return false;
-            });
-            $('#tab04').click(function () {
-                $(this).parents().parents().find('.photo').hide();
-                $('#info04').show();
-                return false;
-            });
-            $('#tab05').click(function () {
-                $(this).parents().parents().find('.photo').hide();
-                $('#info05').show();
-                return false;
-            });
         });
     </script>
 
@@ -106,23 +58,18 @@
                     <a class="goto-03" href="index.html#gotothe-03"></a>
                 </li>
                 <li class="pushy-link">
+                    <a class="goto-06"></a>
+                </li>
+                <li class="pushy-link">
+                    <a class="goto-07"></a>
+                </li>
+                <li class="pushy-link">
                     <a class="goto-04" href="index.html#gotothe-04"></a>
                 </li>
                 <li class="pushy-link">
                     <a class="goto-05" href="index.html#gotothe-05"></a>
                 </li>
-                <li class="pushy-link go-link">
-                    <a class="goto-06" href="investor-relations.html"></a>
-                </li>
-                <li class="pushy-link go-link">
-                    <a class="goto-07" href="corporate-sustainability.html"></a>
-                </li>
             </ul>
-            <!-- <div class="button-mob-wrapper">
-                <div class="button-inner-wrapper turn-on">
-                    <button id="js-button-mob" class="js-button-mob primary--button"></button>
-                </div>
-            </div> -->
             <div class="the-select">
                 <select class="select_lang">
                     <option selected value="tw">TW</option>
@@ -147,20 +94,14 @@
                 </a>
                 <nav class="menu">
                     <ul>
-                        <!-- <li><a href="index.html">首頁</a></li> -->
                         <li><a class="goto-01" href="index.html#gotothe-01"></a></li>
                         <li><a class="goto-02" href="index.html#gotothe-02"></a></li>
                         <li><a class="goto-03" href="index.html#gotothe-03"></a></li>
+                        <li><a class="goto-06"></a></li>
+                        <li><a class="goto-07"></a></li>
                         <li><a class="goto-04" href="index.html#gotothe-04"></a></li>
                         <li><a class="goto-05" href="index.html#gotothe-05"></a></li>
-                        <li class="link"><a class="goto-06" href="investor-relations.html"></a></li>
-                        <li class="link"><a class="goto-07" href="corporate-sustainability.html"></a></li>
                     </ul>
-                    <!-- <div class="button-outer-wrapper">
-                        <div class="button-inner-wrapper turn-on">
-                            <button id="js-button" class="js-button primary--button"></button>
-                        </div>
-                    </div> -->
                     <div class="the-select">
                         <select class="select_lang">
                             <option selected value="tw">TW</option>
@@ -197,57 +138,35 @@
                 </svg>
             </section>
 
-            <!-- 投資人關係 -->
-            <section class="dalue-cont inside-article investor-relations">
+            
+            <section class="dalue-cont investor-relations">
+                <!-- 公司治理 -->
                 <div class="middle-cont">
-                    <div class="article-cont">
-                        <div class="top-title">
-                            <h4 class="table1-title"></h4>
-                        </div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="table1-th-01"></th>
-                                    <td class="table1-td-01"></td>
-                                </tr>
-                                <tr>
-                                    <th class="table1-th-02"></th>
-                                    <td class="table1-td-02"></td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th class="table1-th-03"></th>
-                                    <td class="table1-td-03"></td>
-                                </tr>
-                                <tr>
-                                    <th class="table1-th-04"></th>
-                                    <td class="table1-td-04"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <div class="top-title">
-                            <h4 class="table2-title"></h4>
-                        </div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="table2-th-01"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="table2-td-01"></td>
-                                </tr>
-                                <tr>
-                                    <td class="table2-td-02"></td>
-                                </tr>
-                                <tr>
-                                    <td class="table2-td-03"></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="top-title">
+                        <h4 class="text-title1"></h4>
+                    </div>
+                    <div class="titleContents">
+                        <a class="titleContents-a01"><img src="images/icon_a_01.svg"><span></span></a>
+                        <a class="titleContents-a02"><img src="images/icon_a_02.svg"><span></span></a>
+                        <a class="titleContents-a03"><img src="images/icon_a_03.svg"><span></span></a>
+                        <a class="titleContents-a04"><img src="images/icon_a_04.svg"><span></span></a>
+                        <a class="titleContents-a05"><img src="images/icon_a_05.svg"><span></span></a>
+                        <a class="titleContents-a06"><img src="images/icon_a_06.svg"><span></span></a>
+                        <a class="titleContents-a07"><img src="images/icon_a_07.svg"><span></span></a>
+                    </div>
+                </div>
+                <!-- 股東專區 -->
+                <div class="middle-cont">
+                    <div class="top-title">
+                        <h4 class="text-title2"></h4>
+                    </div>
+                    <div class="titleContents">
+                        <a class="titleContents-b01"><img src="images/icon_b_01.svg"><span></span></a>
+                        <a class="titleContents-b02"><img src="images/icon_b_02.svg"><span></span></a>
+                        <a class="titleContents-b03"><img src="images/icon_b_03.svg"><span></span></a>
+                        <a class="titleContents-b04"><img src="images/icon_b_04.svg"><span></span></a>
+                        <a class="titleContents-b05"><img src="images/icon_b_05.svg"><span></span></a>
+                        <a class="titleContents-b06"><img src="images/icon_b_06.svg"><span></span></a>
                     </div>
                 </div>
                 <div class="back_button">
@@ -274,65 +193,166 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- sample data JS -->
-    <script src="js/data.js?v=1.1"></script>
+    <script src="js/data.js?v=1.6"></script>
     <!-- AJAX JS -->
-    <script src="js/custom.js?v=19"></script>
+    <script src="js/custom.js?v=22"></script>
+<script>
+    // FIX: Swiper v11 的 autoplay 正確寫法
+    var swiper = new Swiper(".swiper-container", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: { delay: 3000 }, // FIX: 由 autoplay: 3000 改為物件寫法
+        pagination: { el: ".swiper-pagination", clickable: true },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            320: { slidesPerView: 1, spaceBetween: 20 },
+            480: { slidesPerView: 2, spaceBetween: 30 },
+            900: { slidesPerView: 3, spaceBetween: 40 },
+            1200: { slidesPerView: 3, spaceBetween: 40 },
+        },
+    });
 
-    <!-- Initialize Swiper -->
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 3,
-            spaceBetween: 30,
-            loop: true,
-            autoplay: 3000,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            // Responsive breakpoints
-            breakpoints: {
-                // when window width is >= 320px
-                320: {
-                    slidesPerView: 1,
-                    spaceBetween: 20
-                },
-                // when window width is >= 480px
-                480: {
-                    slidesPerView: 2,
-                    spaceBetween: 30
-                },
-                // when window width is >= 640px
-                900: {
-                    slidesPerView: 3,
-                    spaceBetween: 40
-                },
-                1200: {
-                    slidesPerView: 3,
-                    spaceBetween: 40
+    // ====== 相容你原本函式的後備（若你的 js 已提供，這些不會生效） ======
+    // FIX: 加上輕量備援，以免外部檔案載入失敗導致空白
+    if (typeof setLocalStorage !== "function") {
+        window.setLocalStorage = function (data) {
+            try {
+                localStorage.setItem("dalue_datas", JSON.stringify(data));
+            } catch (e) { }
+        };
+    }
+    if (typeof getLocalStorage !== "function") {
+        window.getLocalStorage = function (lang) {
+            try {
+                const raw = localStorage.getItem("dalue_datas");
+                return raw ? JSON.parse(raw) : null;
+            } catch (e) {
+                return null;
+            }
+        };
+    }
+    // 通用快取工具
+    function getCachedAll() {
+        try {
+            const raw = localStorage.getItem("dalue_datas");
+            return raw ? JSON.parse(raw) : null;
+        } catch (e) {
+            return null;
+        }
+    }
+    function getCachedByLang(lang) {
+        const all = getCachedAll();
+        return all && all[lang] ? all[lang] : null;
+    }
+    function setCache(allLangData) {
+        try {
+            localStorage.setItem("dalue_datas", JSON.stringify(allLangData));
+        } catch (e) { }
+    }
+
+    // FIX: 統一資料進場流程—先快取、後 API、失敗回離線
+    function ensureData(lang) {
+        return new Promise(function (resolve) {
+            const cached = getCachedByLang(lang);
+            if (cached) return resolve(getCachedAll());
+
+            // FIX: APIURL 守衛與相對路徑後備
+            var apiBase = typeof APIURL === "string" && APIURL ? APIURL : "";
+            var url = apiBase ? APIURL + "/api/daLue2" : "/api/daLue2";
+
+            $.ajax({
+                url: url,
+                type: "GET",
+                dataType: "json",
+                timeout: 10000,
+            })
+                .done(function (datas) {
+                    try {
+                        setLocalStorage(datas);
+                    } catch (e) { }
+                    try {
+                        setCache(datas);
+                    } catch (e) { }
+                    resolve(datas);
+                })
+                .fail(function () {
+                    console.log("--------------api fail------------")
+                    window.jsonData = jsonData
+                    // FIX: API 失敗 → 採用離線資料（內嵌 jsonData）
+                    try {
+                        setLocalStorage(window.jsonData);
+                    } catch (e) { }
+                    try {
+                        setCache(window.jsonData);
+                    } catch (e) { }
+                    resolve(window.jsonData);
+                });
+        });
+    }
+
+    $(document).ready(function () {
+        const parameters = new URLSearchParams(window.location.search);
+        const lang = parameters.get("lang") || "tw";
+        console.log("lang--", lang);
+        $(".select_lang").val(lang);
+
+        // 導航帶語系參數（保留原本行為）
+        $(".logo,.goto-home").attr("href", "index.html?lang=" + lang);
+        $(".goto-06").attr("href", "investor-relations.html?lang=" + lang);
+        $(".goto-07").attr("href", "corporate-sustainability.html?lang=" + lang,);
+
+        $(".titleContents-a01").attr("href", "organizational_structure.html?lang=" + lang);
+        $(".titleContents-a02").attr("href", "board_of_directors.html?lang=" + lang);
+        $(".titleContents-a03").attr("href", "functional_committees.html?lang=" + lang);
+        $(".titleContents-a04").attr("href", "https://da-lue-images.s3.ap-southeast-1.amazonaws.com/inverstor/regulations_en.pdf");
+        $(".titleContents-a05").attr("href", "internal_audit.html?lang=" + lang);
+        $(".titleContents-a06").attr("href", "corporate_governance_situation.html?lang=" + lang);
+        $(".titleContents-a07").attr("href", "stakeholder_relationships.html?lang=" + lang);
+
+        $(".titleContents-b01").attr("href", "https://da-lue-images.s3.ap-southeast-1.amazonaws.com/inverstor/organize_" + lang + ".jpg");
+        $(".titleContents-b02").attr("href", "financial_information.html?lang=" + lang);
+        $(".titleContents-b03").attr("href", "investor_conference.html?lang=" + lang);
+        $(".titleContents-b04").attr("href", "major_news.html?lang=" + lang);
+        $(".titleContents-b05").attr("href", "stock_price_information.html?lang=" + lang);
+        $(".titleContents-b06").attr("href", "service_operations.html?lang=" + lang);
+
+        if (lang === "en") {
+            $("#container").addClass("for-en");
+        } else {
+            // FIX: 由 remove('for-en') 改為 removeClass('for-en')
+            $("#container").removeClass("for-en");
+        }
+
+        // FIX: 無論是否帶 query，都走一致流程 → 先取快取，無則打 API，失敗用離線資料
+        ensureData(lang)
+            .then(function (allData) {
+                var datas =
+                    typeof getLocalStorage === "function"
+                        ? getLocalStorage(lang) || allData
+                        : allData;
+
+                // FIX: 保證 setDalueData 被呼叫時資料已就緒
+                if (typeof setDalueData === "function") {
+                    setDalueData(datas, lang);
+                } else {
+                    console.warn(
+                        "setDalueData 未載入，請確認 js/data.js 或相關檔案。",
+                    );
                 }
-            }
-        });
-        $(document).ready(function () {
-            const parameters = new URLSearchParams(window.location.search);
-            const lang = parameters.get('lang') || 'tw';
-            console.log('lang--', lang);
-            $('.select_lang').val(lang);
-            $('.logo,.goto-home,.goto-01,.goto-02,.goto-03,.goto-04,.goto-05,.back_link').attr('href', 'index.html?lang=' + lang);
-            $('.goto-06').attr('href', 'investor-relations.html?lang=' + lang);
-            $('.goto-07').attr('href', 'corporate-sustainability.html?lang=' + lang);
-            if (lang === 'en') {
-                $('#container').addClass('for-en');
-            } else {
-                $('#container').remove('for-en');
-            }
-            const datas = getLocalStorage(lang);
-            setDalueData(datas, lang);
-        });
-    </script>
+            })
+            .catch(function (err) {
+                console.error("資料初始化失敗：", err);
+                // 最終保底
+                if (typeof setDalueData === "function") {
+                    setDalueData(window.jsonData, lang);
+                }
+            });
+    });
+</script>
 
 </body>
 

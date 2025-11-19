@@ -1148,6 +1148,14 @@ body {
 .inside-cont .investor-relations table tr th {
   width: 30%;
 }
+.inside-cont .investor-relations .top-title {
+  padding: 25px 0;
+}
+.inside-cont .investor-relations .top-title h4 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
 .inside-cont .bg-cover-01 {
   background: url(../images/bg_01.jpg) center center no-repeat;
   background-size: cover;
@@ -1172,13 +1180,17 @@ body {
 .inside-cont .titleContents img {
   max-width: 40%;
 }
+.inside-cont .titleContents span {
+  font-size: 17px;
+}
 .inside-cont .titleContents a {
   display: flex;
   align-items: center;
   gap: 10px;
   flex: calc(25% - 8px);
   max-width: calc(25% - 8px);
-  text-align: center;
+  text-align: left;
+  line-height: 1.2;
   color: #2c6a2e;
   padding: 20px;
   border: 1px solid #00be76;

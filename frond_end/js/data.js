@@ -151,6 +151,8 @@ const jsonData = {
       "table2_td_01": "地址：新北市xxxxqwqwqw",
       "table2_td_02": "電話：+886-1123-1231",
       "table2_td_03": "網址：http://www.wewe.com.tw",
+      "text_title1": "公司治理",
+      "text_title2": "股東專區",
     },
     "corporate_sustainability": {
       "main_title": "企業永續",
@@ -161,9 +163,29 @@ const jsonData = {
       "disc_02": "<li>2024 年 S & P Global 永續年鑑，連續 2 年名列產業別全球 Top 1% 最高榮譽肯定，為臺灣該產業唯一獲此亮眼成就的機構</li><li>大略國際獲碳中和驗證聲明書，持續致力推動各項減碳措施，加速實踐淨零</li>",
       "disc_03": "<li>大略國際 30 週年，訂定「認真永續．綠色生活」永續主張，秉持延續「認真」的精神，從三十邁向「永續」</li><li>獲CDP氣候變遷評等「領導等級A-」</li>"
     },
-    "corporate_governance": {
-      "main_title": "公司治理",
-
+    "functional_committees": {
+      "main_title": "功能性委員",
+      "text1_content": "<p>大略國際控股有限公司（Da Lue International Holding Co., Ltd.，以下簡稱「本公司」）為設立於英屬開曼群島之投資控股公司，主要轉投資事業涵蓋婚禮、酒店及婚紗攝影等相關產業。本公司依據公司治理原則，建立完善之管理架構及明確之權責分工，以確保營運效率、決策透明與永續發展。</p>",
+      "table1_th": "股東會",
+      "table1_td": "為公司最高權力機構，負責選任董事、監督經營團隊運作，並審議公司重大方針與財務報告。",
+      "table2_th": "董事長",
+      "table2_td": "統籌公司整體經營方向與發展策略，並領導董事會運作。設有：",
+      "table2_disc": "<li>策略長：協助規劃長期營運藍圖與集團發展方向。</li><li>專業顧問：提供產業趨勢與經營決策之專業建議。</li>",
+      "table3_th": "稽核室",
+      "table3_td": "隸屬董事會，獨立運作，負責內部稽核及內控制度之檢核，確保各單位遵循公司政策及法令規範。",
+      "table4_th": "總經理室",
+      "table4_td": "由總經理統籌公司營運及轉投資事業管理，負責年度計畫執行、資源分配及績效追蹤，確保公司策略有效落實。",
+      "table5_th": "財會處",
+      "table5_td": "負責公司財務管理、會計作業與資金調度，確保財務穩健及營運效率。",
+      "table5_disc": "<li>會計部：編製財務報表、成本分析及稅務申報。</li><li>財務部：負責資金運用、預算編列及投資規劃。</li>",
+      "table6_th": "行政處",
+      "table6_td": "統籌公司內部行政、人事、資訊及法務事宜，支援各部門日常運作。",
+      "table6_disc": "<li>人力資源部：負責人員招募、培訓、績效管理及企業文化推動。</li><li>總務部：管理辦公環境、採購與行政支援事務。</li><li>•資訊管理部：規劃與維護資訊系統及資安管理。</li><li>法務部：提供法律諮詢、契約審閱與風險控管。</li>",
+      "table7_th": "行銷暨公關部",
+      "table7_td": "負責品牌行銷策略、媒體宣傳與公關活動規劃，提升公司及轉投資事業之市場能見度與形象價值。",
+      "table8_th": "子公司管理處",
+      "table8_td": "專責集團旗下事業之協調與監督，整合資源、追蹤績效，確保子公司營運方向與母公司策略一致。<br>下設：",
+      "table8_disc": "<li>新事業一部、二部、三部：分別負責不同區域或業務領域之投資與營運推動，開發新市場與創新服務模式。</li>",
     }
   },
   "en": {
@@ -316,7 +338,8 @@ const jsonData = {
       "table2_th_01": "Da-Lueh XXXXXXXX Co., Ltd. Stock Affairs Agency Division",
       "table2_td_01": "Address: New Taipei City xxxxqwqwqw",
       "table2_td_02": "Phone: +886-1123-1231",
-      "table2_td_03": "Website: http://www.wewe.com.tw"
+      "text_title1": "Corporate Governance",
+      "text_title2": "Shareholder Area",
     },
     "corporate_sustainability": {
       "main_title": "Corporate Sustainability",
@@ -327,8 +350,29 @@ const jsonData = {
       "disc_02": "<li>Listed in the S&P Global Sustainability Yearbook for 2024, achieving the highest honor of being in the Top 1% globally for the industry for the second consecutive year, and is the only institution in this industry in Taiwan to achieve this outstanding result.</li><li>Da-Lueh International has obtained a carbon neutrality verification statement, continuously striving to promote various carbon reduction measures and accelerating the realization of net-zero.</li>",
       "disc_03": "<li>Marked Da-Lueh International's 30th anniversary with the sustainability proposition 'Diligent Sustainability, Green Living,' upholding the spirit of 'diligence' and transitioning from three decades towards 'sustainability.'</li><li>Received 'Leadership Level A-' rating in the CDP Climate Change assessment.</li>"
     },
-    "corporate_governance": {
-
+    "functional_committees": {
+      "main_title": "Functional Committee",
+      "text1_content": "<p>Da Lue International Holding Co., Ltd. (hereinafter referred to as "the Company") is an investment holding company established in the British Cayman Islands. Its main investments cover wedding, hotel, and wedding photography industries. The Company has established a sound management structure and clear division of responsibilities in accordance with corporate governance principles to ensure operational efficiency, transparent decision-making, and sustainable development.</p>",
+      "table1_th": "Shareholders' Meeting",
+      "table1_td": "The highest authority of the Company, responsible for electing directors, supervising the operation of the management team, and reviewing the Company's major policies and financial reports.",
+      "table2_th": "Chairman",
+      "table2_td": "Oversees the overall business direction and development strategy of the Company and leads the operation of the Board of Directors. It has the following members:",
+      "table2_disc": "<li>Chief Strategy Officer: Assists in planning the long-term operational blueprint and the Group's development direction.</li><li>Professional Advisors: Provide professional advice on industry trends and business decisions.</li>",
+      "table3_th": "Audit Department",
+      "table3_td": "Subordinate to the Board of Directors, operates independently, responsible for internal auditing and reviewing internal control systems to ensure all units comply with company policies and legal regulations.",
+      "table4_th": "General Manager's Office",
+      "table4_td": "Under the General Manager's overall coordination of company operations and investment management, responsible for annual plan execution, resource allocation, and performance tracking to ensure the effective implementation of company strategies.",
+      "table5_th": "Finance and Accounting Department",
+      "table5_td": "Responsible for company financial management, accounting operations, and fund allocation to ensure financial stability and operational efficiency.",
+      "table5_disc": "<li>Accounting Department: Prepares financial statements, performs cost analysis, and files tax returns.</li><li>Finance Department: Responsible for fund utilization, budget preparation, and investment planning." "</li>",
+      "table6_th": "Administrative Department",
+      "table6_td": "Oversees internal administrative, human resources, information, and legal matters, supporting the daily operations of various departments.",
+      "table6_disc": "<li>Human Resources Department: Responsible for recruitment, training, performance management, and corporate culture promotion.</li><li>General Affairs Department: Manages the office environment, procurement, and administrative support.</li><li>•Information Management Department: Plans and maintains information systems and manages cybersecurity.</li><li>Legal Department: Provides legal advice, contract review, and risk control.",
+      "table7_th": "Marketing and Public Relations Department",
+      "table7_td": "Responsible for brand marketing strategies, media promotion, and public relations activity planning to enhance the market visibility and image value of the company and its invested businesses.",
+      "table8_th": "Subsidiary Management Department",
+      "table8_td": "Dedicated to coordinating and supervising the group's businesses, integrating resources, tracking performance, and ensuring that the subsidiaries' operational direction is consistent with the parent company's strategy. <br>Subordinate to:",
+      "table8_disc": "<li>New Business Units One, Two, and Three: Responsible for investment and operational promotion in different regions or business areas, developing new markets and innovative service models.</li>",
     }
   }
 }

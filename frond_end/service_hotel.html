@@ -23,7 +23,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css?v=2.1">
+    <link rel="stylesheet" href="css/style.css?v=2.3">
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -31,58 +31,11 @@
     <link rel="stylesheet" href="mobilemenu/pushy.css">
 
     <!-- animate -->
+     <script src="js/dalue.js"></script> 
     <script src="js/wow.js"></script>
     <script>
         $(function () {
             new WOW().init();
-        });
-
-        // header
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 120) {
-                $('.dalue-header').addClass('menu-bgcolor');
-            } else {
-                $('.dalue-header').removeClass('menu-bgcolor');
-            }
-        });
-
-
-        // service tab
-        $(function () {
-            $('.service .photo').hide();
-            $('#info01').show();
-        });
-        $(function () {
-            $('.tab-title li').click(function () {
-                $(this).parents().find('li').removeClass('choose');
-                $(this).addClass("choose");
-                return false;
-            });
-            $('#tab01').click(function () {
-                $(this).parents().parents().find('.photo').hide();
-                $('#info01').show();
-                return false;
-            });
-            $('#tab02').click(function () {
-                $(this).parents().parents().find('.photo').hide();
-                $('#info02').show();
-                return false;
-            });
-            $('#tab03').click(function () {
-                $(this).parents().parents().find('.photo').hide();
-                $('#info03').show();
-                return false;
-            });
-            $('#tab04').click(function () {
-                $(this).parents().parents().find('.photo').hide();
-                $('#info04').show();
-                return false;
-            });
-            $('#tab05').click(function () {
-                $(this).parents().parents().find('.photo').hide();
-                $('#info05').show();
-                return false;
-            });
         });
     </script>
 
@@ -106,23 +59,18 @@
                     <a class="goto-03" href="index.html#gotothe-03"></a>
                 </li>
                 <li class="pushy-link">
+                    <a class="goto-06"></a>
+                </li>
+                <li class="pushy-link">
+                    <a class="goto-07"></a>
+                </li>
+                <li class="pushy-link">
                     <a class="goto-04" href="index.html#gotothe-04"></a>
                 </li>
                 <li class="pushy-link">
                     <a class="goto-05" href="index.html#gotothe-05"></a>
                 </li>
-                <li class="pushy-link go-link">
-                    <a class="goto-06" href="investor-relations.html"></a>
-                </li>
-                <li class="pushy-link go-link">
-                    <a class="goto-07" href="corporate-sustainability.html"></a>
-                </li>
             </ul>
-            <!-- <div class="button-mob-wrapper">
-                <div class="button-inner-wrapper turn-on">
-                    <button id="js-button-mob" class="js-button-mob primary--button"></button>
-                </div>
-            </div> -->
             <div class="the-select">
                 <select class="select_lang">
                     <option selected value="tw">TW</option>
@@ -148,20 +96,14 @@
                 </a>
                 <nav class="menu">
                     <ul>
-                        <!-- <li><a href="index.html">首頁</a></li> -->
                         <li><a class="goto-01" href="index.html#gotothe-01"></a></li>
                         <li><a class="goto-02" href="index.html#gotothe-02"></a></li>
                         <li><a class="goto-03" href="index.html#gotothe-03"></a></li>
+                        <li><a class="goto-06"></a></li>
+                        <li><a class="goto-07"></a></li>
                         <li><a class="goto-04" href="index.html#gotothe-04"></a></li>
                         <li><a class="goto-05" href="index.html#gotothe-05"></a></li>
-                        <li class="link"><a class="goto-06" href="investor-relations.html"></a></li>
-                        <li class="link"><a class="goto-07" href="corporate-sustainability.html"></a></li>
                     </ul>
-                    <!-- <div class="button-outer-wrapper">
-                        <div class="button-inner-wrapper turn-on">
-                            <button id="js-button" class="js-button primary--button"></button>
-                        </div>
-                    </div> -->
                     <div class="the-select">
                         <select class="select_lang">
                             <option selected value="tw">TW</option>
@@ -230,9 +172,9 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- sample data JS -->
-    <script src="js/data.js?v=1.1"></script>
+    <script src="js/data.js?v=1.6"></script>
     <!-- AJAX JS -->
-    <script src="js/custom.js?v=19"></script>
+    <script src="js/custom.js?v=22"></script>
 </body>
 
 </html>

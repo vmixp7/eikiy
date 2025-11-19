@@ -997,6 +997,14 @@
     table tr th{
       width: 30%;
     }
+    .top-title{
+      padding: 25px 0;
+      h4{
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+      }
+    }
   }
   .bg-cover-01{
     background: url(../images/bg_01.jpg) center center no-repeat;
@@ -1023,13 +1031,17 @@
     img{
       max-width: 40%;
     }
+    span{
+      font-size: 17px;
+    }
     a{
       display: flex;
       align-items: center;
       gap: 10px;
       flex:calc(25% - 8px);
       max-width:calc(25% - 8px);
-      text-align: center;
+      text-align: left;
+      line-height: 1.2;
       color: #2c6a2e;
       padding: 20px;
       border: 1px solid #00be76;
