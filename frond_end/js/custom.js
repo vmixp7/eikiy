@@ -129,14 +129,13 @@ function setDalueData(msg, lang) {
   $('.corporate_title1').html(msg.corporate_title1);
   $('.corporate_title2').html(msg.corporate_title2);
   $('#functional_committees .content').html(msg.functional_committees.content);
-
-  // $('#corporate_governance .main-title span').html(msg.corporate_governance.main_title);
-  // $('.text1-title').html(msg.corporate_governance.text1_title);
-  // $('.text1-content').html(msg.corporate_governance.text1_content);
-  // $('.text2-title').html(msg.corporate_governance.text2_title);
-  // $('.disc-01').html(msg.corporate_governance.disc_01);
-  // $('.disc-02').html(msg.corporate_governance.disc_02);
-  // $('.disc-03').html(msg.corporate_governance.disc_03);
+  $('#functional_committees .main-title').html(msg.functional_committees.main_title);
+  $('#financial_information .main-title span').html(msg.financial_information.main_title);
+  $('#financial_information .table-td .a1').html(msg.financial_information.table_td_a1);
+  $('#financial_information .table-td .a2').html(msg.financial_information.table_td_a2);
+  $('#financial_information .table-td .a3').html(msg.financial_information.table_td_a3);
+  $('#financial_information .table-td .a4').html(msg.financial_information.table_td_a4);
+  $('#financial_information .table-td .abook').html(msg.financial_information.table_td_abook);
 
   if (msg.about) {
     $('#gotothe-01 .main-title').html(msg.about.slogan);

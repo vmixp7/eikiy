@@ -312,8 +312,8 @@
             const lang = parameters.get('lang') || 'tw';
             console.log('lang--', lang);
             $('.select_lang').val(lang);
-            $('.logo,.goto-home,.goto-01,.goto-02,.goto-03,.goto-04,.goto-05,.back_link').attr('href', 'index.html?lang=' + lang);
-            $('.goto-06').attr('href', 'corporate_governance.html?lang=' + lang);
+            $('.logo,.goto-home,.goto-01,.goto-02,.goto-03,.goto-04,.goto-05').attr('href', 'index.html?lang=' + lang);
+            $('.goto-06,.back_link').attr('href', 'corporate_governance.html?lang=' + lang);
             $('.goto-07').attr('href', 'corporate-sustainability.html?lang=' + lang);
             if (lang === 'en') {
                 $('#container').addClass('for-en');

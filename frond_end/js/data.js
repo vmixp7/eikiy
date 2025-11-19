@@ -165,6 +165,7 @@ const jsonData = {
     "corporate_title2": "股東專區",
     "company_img": "https://da-lue-images.s3.ap-southeast-1.amazonaws.com/inverstor/organize_tw.jpg",
     "functional_committees": {
+      "main_title": "功能性委員會",
       "content": `<h3 class="title">大略國際控股有限公司（Da Lue International Holding Co.,
                                 Ltd.，以下簡稱「本公司」）為設立於英屬開曼群島之投資控股公司，主要轉投資事業涵蓋婚禮、酒店及婚紗攝影等相關產業。
       本公司依據公司治理原則，建立完善之管理架構及明確之權責分工，以確保營運效率、決策透明與永續發展。
@@ -201,6 +202,17 @@ const jsonData = {
                             <p>專責集團旗下事業之協調與監督，整合資源、追蹤績效，確保子公司營運方向與母公司策略一致。</p>
                             <p>下設：</p>
                             <p>新事業一部、二部、三部：分別負責不同區域或業務領域之投資與營運推動，開發新市場與創新服務模式。</p>`,
+    },
+    "financial_information": {
+      "main_title": "財務資訊",
+      "table1_th": "年度",
+      "table2_th": "合併財務報告",
+      "table3_th": "年度報告",
+      "table_td_a1": "第 1 季財務報告書",
+      "table_td_a2": "第 2 季財務報告書",
+      "table_td_a3": "第 3 季財務報告書",
+      "table_td_a4": "第 4 季財務報告書",
+      "table_td_abook": "年報電子書",
     }
   },
   "en": {
@@ -368,6 +380,7 @@ const jsonData = {
     "corporate_title2": "Shareholder Area",
     "company_img": "https://da-lue-images.s3.ap-southeast-1.amazonaws.com/inverstor/organize_en.jpg",
     "functional_committees": {
+      "main_title": "Functional Committees",
       "content": `<h3 class="title">
 Da Lue International Holding Co., Ltd. (hereinafter referred to as “the Company”) is an investment holding company established in the Cayman Islands. The Company primarily invests in businesses related to weddings, hotels, and bridal photography.
 In accordance with corporate governance principles, the Company has established a comprehensive management structure and clear division of responsibilities to ensure operational efficiency, decision-making transparency, and sustainable development.
@@ -430,6 +443,17 @@ Dedicated to coordination and oversight of the Company’s subsidiaries, includi
 New Business Division I, II, and III: Each responsible for investment and business development in different regions or sectors, focusing on market expansion and innovative service models.
 </p>
 `
+    },
+    "financial_information": {
+      "main_title": "Financial Information",
+      "table1_th": "Year",
+      "table2_th": "Consolidated Financial Statements",
+      "table3_th": "Annual Reports",
+      "table_td_a1": "Q1 Financial Report",
+      "table_td_a2": "Q2 Financial Report",
+      "table_td_a3": "Q3 Financial Report",
+      "table_td_a4": "Q4 Financial Report",
+      "table_td_abook": "Annual Report eBook"
     }
   }
 }
