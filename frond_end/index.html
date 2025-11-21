@@ -392,9 +392,9 @@
 <!-- sample data JS -->
 <script src="js/data.js?v=17"></script>
 <!-- AJAX JS -->
-<script src="js/custom.js?v=21"></script>
+<script src="js/custom.js?v=22"></script>
 <script>
-    var version = "20251119.2";
+    const version = "20251121.1"; //data.js修改需要改版號
     var swiper = new Swiper(".swiper-container", {
         slidesPerView: 3,
         spaceBetween: 30,
@@ -454,9 +454,8 @@
     // FIX: 統一資料進場流程—先快取、後 API、失敗回離線
     function ensureData(lang) {
         return new Promise(function (resolve) {
-            // const cached = getCachedByLang(lang);
-            // if (cached) return resolve(getCachedAll());
-
+            console.log("version--", version);
+            // 先檢查版本與快取
             if (version == localStorage.getItem("version")) {
                 console.log("--------------get Cache------------")
                 return resolve(getCachedAll());

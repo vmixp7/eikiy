@@ -30,7 +30,7 @@ const jsonData = {
     "titleContents_a04": "公司重要規章",
     "titleContents_a05": "內部稽核",
     "titleContents_a06": "公司治理情形",
-    "titleContents_a07": "厲害人關係",
+    "titleContents_a07": "利害人關係",
     "titleContents_b01": "股東會",
     "titleContents_b02": "財務資訊",
     "titleContents_b03": "法說會",
