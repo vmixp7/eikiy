@@ -1,228 +1,266 @@
 /*! Pushy - v1.3.0 - 2019-6-25
 * Pushy is a responsive off-canvas navigation menu using CSS transforms & transitions.
 * https://github.com/christophery/pushy/
-* by Christopher Yee */
+* by Christopher Yee
+* Converted to vanilla JavaScript */
 
-(function ($) {
-	var pushy = $('.pushy'), //menu css class
-		body = $('body'),
-		container = $('#container'), //container css class
-		push = $('.push'), //css class to add pushy capability
+(function () {
+	var pushy = document.querySelector('.pushy'), //menu css class
+		body = document.body,
+		container = document.getElementById('container'), //container css class
+		push = document.querySelectorAll('.push'), //css class to add pushy capability
 		pushyLeft = 'pushy-left', //css class for left menu position
 		pushyOpenLeft = 'pushy-open-left', //css class when menu is open (left position)
 		pushyOpenRight = 'pushy-open-right', //css class when menu is open (right position)
-		siteOverlay = $('.site-overlay'), //site overlay
-		menuLinkFocus = $(pushy.data('focus')), //focus on link when menu is open
-		menuSpeed = 200, //jQuery fallback menu speed
-		menuWidth = pushy.width() + 'px', //jQuery fallback menu width
+		siteOverlay = document.querySelector('.site-overlay'), //site overlay
+		menuLinkFocus = pushy ? document.querySelector(pushy.dataset.focus) : null, //focus on link when menu is open
+		menuSpeed = 200, //fallback menu speed
+		menuWidth = pushy ? pushy.offsetWidth + 'px' : '0px', //fallback menu width
 		submenuClass = '.pushy-submenu',
 		submenuOpenClass = 'pushy-submenu-open',
 		submenuClosedClass = 'pushy-submenu-closed',
-		submenu = $(submenuClass);
+		submenu = document.querySelectorAll(submenuClass);
+
+	// Early exit if pushy element doesn't exist
+	if (!pushy) return;
 
 	//check if menu-btn-class data attribute exists
-	if( typeof pushy.data('menu-btn-class') !== 'undefined' ){
-		var menuBtnClass = pushy.data('menu-btn-class'); //take user defined menu button CSS class
-	}else{
-		var menuBtnClass = '.menu-btn'; //set default menu button CSS class
+	var menuBtnClass;
+	if (typeof pushy.dataset.menuBtnClass !== 'undefined') {
+		menuBtnClass = pushy.dataset.menuBtnClass; //take user defined menu button CSS class
+	} else {
+		menuBtnClass = '.menu-btn'; //set default menu button CSS class
 	}
 
 	//css classes to toggle the menu
-	var menuBtn = $(menuBtnClass + ', .pushy-link');
+	var menuBtn = document.querySelectorAll(menuBtnClass + ', .pushy-link');
 
 	//css class to focus when menu is closed w/ esc key
-	var menuBtnFocus = $(menuBtnClass);
+	var menuBtnFocus = document.querySelector(menuBtnClass);
 
 	//close menu w/ esc key
-	$(document).keyup(function(e) {
+	document.addEventListener('keyup', function (e) {
 		//check if esc key is pressed
 		if (e.keyCode == 27) {
-
 			//check if menu is open
-			if( body.hasClass(pushyOpenLeft) || body.hasClass(pushyOpenRight) ){
-				if(cssTransforms3d){
+			if (body.classList.contains(pushyOpenLeft) || body.classList.contains(pushyOpenRight)) {
+				if (cssTransforms3d) {
 					closePushy(); //close pushy
-				}else{
+				} else {
 					closePushyFallback();
 					opened = false; //set menu state
 				}
-				
+
 				//focus on menu button after menu is closed
-				if(menuBtnFocus){
+				if (menuBtnFocus) {
 					menuBtnFocus.focus();
 				}
-				
 			}
-
-		}   
+		}
 	});
 
-	function togglePushy(){
+	function togglePushy() {
 		//add class to body based on menu position
-		if( pushy.hasClass(pushyLeft) ){
-			body.toggleClass(pushyOpenLeft);
-		}else{
-			body.toggleClass(pushyOpenRight);
+		if (pushy.classList.contains(pushyLeft)) {
+			body.classList.toggle(pushyOpenLeft);
+		} else {
+			body.classList.toggle(pushyOpenRight);
 		}
 
 		//focus on link in menu after css transition ends
-		if(menuLinkFocus){
-			pushy.one('transitionend', function() {
+		if (menuLinkFocus) {
+			pushy.addEventListener('transitionend', function handler() {
 				menuLinkFocus.focus();
+				pushy.removeEventListener('transitionend', handler);
 			});
 		}
-		
 	}
 
-	function closePushy(){
-		if( pushy.hasClass(pushyLeft) ){
-			body.removeClass(pushyOpenLeft);
-		}else{
-			body.removeClass(pushyOpenRight);
+	function closePushy() {
+		if (pushy.classList.contains(pushyLeft)) {
+			body.classList.remove(pushyOpenLeft);
+		} else {
+			body.classList.remove(pushyOpenRight);
 		}
 	}
 
-	function openPushyFallback(){
+	// Animation helper function
+	function animateElement(element, property, value, duration) {
+		if (!element) return;
+		element.style.transition = property + ' ' + duration + 'ms ease';
+		element.style[property] = value;
+	}
+
+	function openPushyFallback() {
 		//animate menu position based on CSS class
-		if( pushy.hasClass(pushyLeft) ){
-			body.addClass(pushyOpenLeft);
-			pushy.animate({left: "0px"}, menuSpeed);
-			container.animate({left: menuWidth}, menuSpeed);
-			//css class to add pushy capability
-			push.animate({left: menuWidth}, menuSpeed);
-		}else{
-			body.addClass(pushyOpenRight);
-			pushy.animate({right: '0px'}, menuSpeed);
-			container.animate({right: menuWidth}, menuSpeed);
-			push.animate({right: menuWidth}, menuSpeed);
+		if (pushy.classList.contains(pushyLeft)) {
+			body.classList.add(pushyOpenLeft);
+			animateElement(pushy, 'left', '0px', menuSpeed);
+			if (container) animateElement(container, 'left', menuWidth, menuSpeed);
+			push.forEach(function (el) {
+				animateElement(el, 'left', menuWidth, menuSpeed);
+			});
+		} else {
+			body.classList.add(pushyOpenRight);
+			animateElement(pushy, 'right', '0px', menuSpeed);
+			if (container) animateElement(container, 'right', menuWidth, menuSpeed);
+			push.forEach(function (el) {
+				animateElement(el, 'right', menuWidth, menuSpeed);
+			});
 		}
 
 		//focus on link in menu
-		if(menuLinkFocus){
+		if (menuLinkFocus) {
 			menuLinkFocus.focus();
 		}
 	}
 
-	function closePushyFallback(){
+	function closePushyFallback() {
 		//animate menu position based on CSS class
-		if( pushy.hasClass(pushyLeft) ){
-			body.removeClass(pushyOpenLeft);
-			pushy.animate({left: "-" + menuWidth}, menuSpeed);
-			container.animate({left: "0px"}, menuSpeed);
-			//css class to add pushy capability
-			push.animate({left: "0px"}, menuSpeed);
-		}else{
-			body.removeClass(pushyOpenRight);
-			pushy.animate({right: "-" + menuWidth}, menuSpeed);
-			container.animate({right: "0px"}, menuSpeed);
-			push.animate({right: "0px"}, menuSpeed);
+		if (pushy.classList.contains(pushyLeft)) {
+			body.classList.remove(pushyOpenLeft);
+			animateElement(pushy, 'left', '-' + menuWidth, menuSpeed);
+			if (container) animateElement(container, 'left', '0px', menuSpeed);
+			push.forEach(function (el) {
+				animateElement(el, 'left', '0px', menuSpeed);
+			});
+		} else {
+			body.classList.remove(pushyOpenRight);
+			animateElement(pushy, 'right', '-' + menuWidth, menuSpeed);
+			if (container) animateElement(container, 'right', '0px', menuSpeed);
+			push.forEach(function (el) {
+				animateElement(el, 'right', '0px', menuSpeed);
+			});
 		}
 	}
 
-	function toggleSubmenu(){
+	function toggleSubmenu() {
 		//hide submenu by default
-		$(submenuClass).addClass(submenuClosedClass);
+		document.querySelectorAll(submenuClass).forEach(function (el) {
+			el.classList.add(submenuClosedClass);
+		});
 
-		$(submenuClass).on('click', function(e){
-	        var selected = $(this);
+		document.querySelectorAll(submenuClass).forEach(function (el) {
+			el.addEventListener('click', function (e) {
+				var selected = this;
 
-	        if( selected.hasClass(submenuClosedClass) ) {
-				//hide same-level opened submenus
-				selected.siblings(submenuClass).addClass(submenuClosedClass).removeClass(submenuOpenClass);
-	            //show submenu
-				selected.removeClass(submenuClosedClass).addClass(submenuOpenClass);
-	        }else{
-	            //hide submenu
-	            selected.addClass(submenuClosedClass).removeClass(submenuOpenClass);
-			}
-			// prevent event to be triggered on parent
-			e.stopPropagation();
-	    });
+				if (selected.classList.contains(submenuClosedClass)) {
+					//hide same-level opened submenus
+					var siblings = Array.from(selected.parentElement.children).filter(function (child) {
+						return child !== selected && child.matches(submenuClass);
+					});
+					siblings.forEach(function (sibling) {
+						sibling.classList.add(submenuClosedClass);
+						sibling.classList.remove(submenuOpenClass);
+					});
+					//show submenu
+					selected.classList.remove(submenuClosedClass);
+					selected.classList.add(submenuOpenClass);
+				} else {
+					//hide submenu
+					selected.classList.add(submenuClosedClass);
+					selected.classList.remove(submenuOpenClass);
+				}
+				// prevent event to be triggered on parent
+				e.stopPropagation();
+			});
+		});
 	}
 
 	//checks if 3d transforms are supported removing the modernizr dependency
-	var cssTransforms3d = (function csstransforms3d(){
+	var cssTransforms3d = (function csstransforms3d() {
 		var el = document.createElement('p'),
-		supported = false,
-		transforms = {
-		    'webkitTransform':'-webkit-transform',
-		    'OTransform':'-o-transform',
-		    'msTransform':'-ms-transform',
-		    'MozTransform':'-moz-transform',
-		    'transform':'transform'
-		};
+			supported = false,
+			transforms = {
+				'webkitTransform': '-webkit-transform',
+				'OTransform': '-o-transform',
+				'msTransform': '-ms-transform',
+				'MozTransform': '-moz-transform',
+				'transform': 'transform'
+			};
 
-		if(document.body !== null) {
+		if (document.body !== null) {
 			// Add it to the body to get the computed style
 			document.body.insertBefore(el, null);
 
-			for(var t in transforms){
-			    if( el.style[t] !== undefined ){
-			        el.style[t] = 'translate3d(1px,1px,1px)';
-			        supported = window.getComputedStyle(el).getPropertyValue(transforms[t]);
-			    }
+			for (var t in transforms) {
+				if (el.style[t] !== undefined) {
+					el.style[t] = 'translate3d(1px,1px,1px)';
+					supported = window.getComputedStyle(el).getPropertyValue(transforms[t]);
+				}
 			}
 
 			document.body.removeChild(el);
 
 			return (supported !== undefined && supported.length > 0 && supported !== "none");
-		}else{
+		} else {
 			return false;
 		}
 	})();
 
-	if(cssTransforms3d){
+	// Keep track of menu state for fallback
+	var opened = false;
+
+	if (cssTransforms3d) {
 		//toggle submenu
 		toggleSubmenu();
 
 		//toggle menu
-		menuBtn.on('click', function(){
-			togglePushy();
+		menuBtn.forEach(function (btn) {
+			btn.addEventListener('click', function () {
+				togglePushy();
+			});
 		});
+
 		//close menu when clicking site overlay
-		siteOverlay.on('click', function(){
-			togglePushy();
-		});
-	}else{
+		if (siteOverlay) {
+			siteOverlay.addEventListener('click', function () {
+				togglePushy();
+			});
+		}
+	} else {
 		//add css class to body
-		body.addClass('no-csstransforms3d');
+		body.classList.add('no-csstransforms3d');
 
 		//hide menu by default
-		if( pushy.hasClass(pushyLeft) ){
-			pushy.css({left: "-" + menuWidth});
-		}else{
-			pushy.css({right: "-" + menuWidth});
+		if (pushy.classList.contains(pushyLeft)) {
+			pushy.style.left = '-' + menuWidth;
+		} else {
+			pushy.style.right = '-' + menuWidth;
 		}
 
 		//fixes IE scrollbar issue
-		container.css({"overflow-x": "hidden"});
-
-		//keep track of menu state (open/close)
-		var opened = false;
+		if (container) {
+			container.style.overflowX = 'hidden';
+		}
 
 		//toggle submenu
 		toggleSubmenu();
 
 		//toggle menu
-		menuBtn.on('click', function(){
-			if (opened) {
-				closePushyFallback();
-				opened = false;
-			} else {
-				openPushyFallback();
-				opened = true;
-			}
+		menuBtn.forEach(function (btn) {
+			btn.addEventListener('click', function () {
+				if (opened) {
+					closePushyFallback();
+					opened = false;
+				} else {
+					openPushyFallback();
+					opened = true;
+				}
+			});
 		});
 
 		//close menu when clicking site overlay
-		siteOverlay.on('click', function(){
-			if (opened) {
-				closePushyFallback();
-				opened = false;
-			} else {
-				openPushyFallback();
-				opened = true;
-			}
-		});
+		if (siteOverlay) {
+			siteOverlay.addEventListener('click', function () {
+				if (opened) {
+					closePushyFallback();
+					opened = false;
+				} else {
+					openPushyFallback();
+					opened = true;
+				}
+			});
+		}
 	}
-}(jQuery));
+})();

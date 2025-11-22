@@ -20,8 +20,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
     <link rel="manifest" href="images/site.webmanifest">
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css?v=21">
     <!-- Link Swiper's CSS -->
@@ -33,104 +31,83 @@
     <!-- animate -->
     <script src="js/wow.js"></script>
     <script>
-        $(function () {
+        // smooth scroll helper
+        function smoothScrollTo(targetSelector, offset) {
+            var target = document.querySelector(targetSelector);
+            if (target) {
+                var targetPosition = target.getBoundingClientRect().top + window.scrollY + offset;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
             new WOW().init();
+
+            // menu scroll navigation
+            document.querySelectorAll('.goto-01').forEach(function (el) {
+                el.addEventListener('click', function () {
+                    smoothScrollTo('#gotothe-01', 0);
+                });
+            });
+            document.querySelectorAll('.goto-02').forEach(function (el) {
+                el.addEventListener('click', function () {
+                    smoothScrollTo('#gotothe-02', -85);
+                });
+            });
+            document.querySelectorAll('.goto-03').forEach(function (el) {
+                el.addEventListener('click', function () {
+                    smoothScrollTo('#gotothe-03', -85);
+                });
+            });
+            document.querySelectorAll('.goto-04').forEach(function (el) {
+                el.addEventListener('click', function () {
+                    smoothScrollTo('#gotothe-04', -85);
+                });
+            });
+            document.querySelectorAll('.goto-05').forEach(function (el) {
+                el.addEventListener('click', function () {
+                    smoothScrollTo('#gotothe-05', -85);
+                });
+            });
+
+            // service tab
+            document.querySelectorAll('.service .photo').forEach(function (el) { el.style.display = 'none'; });
+            var info01 = document.getElementById('info01');
+            if (info01) info01.style.display = 'flex';
+
+            document.querySelectorAll('.tab-title li').forEach(function (li) {
+                li.addEventListener('click', function () {
+                    var parent = this.closest('.tab-title');
+                    if (parent) {
+                        parent.querySelectorAll('li').forEach(function (item) { item.classList.remove('choose'); });
+                    }
+                    this.classList.add('choose');
+                });
+            });
+
+            ['tab01', 'tab02', 'tab03', 'tab04', 'tab05'].forEach(function (tabId, index) {
+                var tab = document.getElementById(tabId);
+                if (tab) {
+                    tab.addEventListener('click', function () {
+                        document.querySelectorAll('.service .photo').forEach(function (el) { el.style.display = 'none'; });
+                        var info = document.getElementById('info0' + (index + 1));
+                        if (info) info.style.display = 'flex';
+                    });
+                }
+            });
         });
 
         // header
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 120) {
-                $('.dalue-header').addClass('menu-bgcolor');
+        window.addEventListener('scroll', function () {
+            var header = document.querySelector('.dalue-header');
+            if (window.scrollY > 120) {
+                if (header) header.classList.add('menu-bgcolor');
             } else {
-                $('.dalue-header').removeClass('menu-bgcolor');
+                if (header) header.classList.remove('menu-bgcolor');
             }
-        });
-
-        // menu
-        $(function () {
-            $('.goto-01').click(function () {
-                $('html,body').animate({
-                    scrollTop: $('#gotothe-01').offset().top
-                }, 800);
-            });
-            $('.goto-02').click(function () {
-                $('html,body').animate({
-                    scrollTop: $('#gotothe-02').offset().top - 85
-                }, 800);
-            });
-            $('.goto-03').click(function () {
-                $('html,body').animate({
-                    scrollTop: $('#gotothe-03').offset().top - 85
-                }, 800);
-            });
-            $(".goto-04").click(function () {
-                $("html,body").animate({
-                    scrollTop: $("#gotothe-04").offset().top - 85
-                }, 800);
-            });
-            $(".goto-05").click(function () {
-                $("html,body").animate({
-                    scrollTop: $("#gotothe-05").offset().top - 85
-                }, 800);
-            });
-            return false;
-        });
-
-        //點右邊top
-        // $(function () {
-        //     $(window).scroll(function () {
-        //         var HEIGHT = $(window).scrollTop() + $(window).innerHeight();
-        //         if ($(window).scrollTop() > 400) {
-        //             $("#TOP").stop(true, false).fadeIn();
-        //         } else {
-        //             $("#TOP").stop(true, false).fadeOut();
-        //         }
-        //     });
-        //     $("#TOP").click(function goTop() {
-        //         $("html,body").stop(true, false).animate({
-        //             scrollTop: 0
-        //         }, 900);
-        //     });
-        //     return false;
-        // });
-
-
-        // service tab
-        $(function () {
-            $('.service .photo').hide();
-            $('#info01').show();
-        });
-        $(function () {
-            $('.tab-title li').click(function () {
-                $(this).parents().find('li').removeClass('choose');
-                $(this).addClass("choose");
-                return false;
-            });
-            $('#tab01').click(function () {
-                $(this).parents().parents().find('.photo').hide();
-                $('#info01').show();
-                return false;
-            });
-            $('#tab02').click(function () {
-                $(this).parents().parents().find('.photo').hide();
-                $('#info02').show();
-                return false;
-            });
-            $('#tab03').click(function () {
-                $(this).parents().parents().find('.photo').hide();
-                $('#info03').show();
-                return false;
-            });
-            $('#tab04').click(function () {
-                $(this).parents().parents().find('.photo').hide();
-                $('#info04').show();
-                return false;
-            });
-            $('#tab05').click(function () {
-                $(this).parents().parents().find('.photo').hide();
-                $('#info05').show();
-                return false;
-            });
         });
     </script>
 
@@ -441,10 +418,6 @@
 <script src="mobilemenu/pushy.js"></script>
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<!-- bootstrap validate JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
-    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
-    crossorigin="anonymous"></script>
 <!-- AJAX JS -->
 <script src="js/custom.js?v=22"></script>
 

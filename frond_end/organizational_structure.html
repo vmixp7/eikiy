@@ -20,8 +20,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
     <link rel="manifest" href="images/site.webmanifest">
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css?v=21">
     <!-- Link Swiper's CSS -->
@@ -33,56 +31,44 @@
     <!-- animate -->
     <script src="js/wow.js"></script>
     <script>
-        $(function () {
+        document.addEventListener('DOMContentLoaded', function () {
             new WOW().init();
+
+            // service tab
+            document.querySelectorAll('.service .photo').forEach(function (el) { el.style.display = 'none'; });
+            var info01 = document.getElementById('info01');
+            if (info01) info01.style.display = 'flex';
+
+            document.querySelectorAll('.tab-title li').forEach(function (li) {
+                li.addEventListener('click', function () {
+                    var parent = this.closest('.tab-title');
+                    if (parent) {
+                        parent.querySelectorAll('li').forEach(function (item) { item.classList.remove('choose'); });
+                    }
+                    this.classList.add('choose');
+                });
+            });
+
+            ['tab01', 'tab02', 'tab03', 'tab04', 'tab05'].forEach(function (tabId, index) {
+                var tab = document.getElementById(tabId);
+                if (tab) {
+                    tab.addEventListener('click', function () {
+                        document.querySelectorAll('.service .photo').forEach(function (el) { el.style.display = 'none'; });
+                        var info = document.getElementById('info0' + (index + 1));
+                        if (info) info.style.display = 'flex';
+                    });
+                }
+            });
         });
 
         // header
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 120) {
-                $('.dalue-header').addClass('menu-bgcolor');
+        window.addEventListener('scroll', function () {
+            var header = document.querySelector('.dalue-header');
+            if (window.scrollY > 120) {
+                if (header) header.classList.add('menu-bgcolor');
             } else {
-                $('.dalue-header').removeClass('menu-bgcolor');
+                if (header) header.classList.remove('menu-bgcolor');
             }
-        });
-
-
-        // service tab
-        $(function () {
-            $('.service .photo').hide();
-            $('#info01').show();
-        });
-        $(function () {
-            $('.tab-title li').click(function () {
-                $(this).parents().find('li').removeClass('choose');
-                $(this).addClass("choose");
-                return false;
-            });
-            $('#tab01').click(function () {
-                $(this).parents().parents().find('.photo').hide();
-                $('#info01').show();
-                return false;
-            });
-            $('#tab02').click(function () {
-                $(this).parents().parents().find('.photo').hide();
-                $('#info02').show();
-                return false;
-            });
-            $('#tab03').click(function () {
-                $(this).parents().parents().find('.photo').hide();
-                $('#info03').show();
-                return false;
-            });
-            $('#tab04').click(function () {
-                $(this).parents().parents().find('.photo').hide();
-                $('#info04').show();
-                return false;
-            });
-            $('#tab05').click(function () {
-                $(this).parents().parents().find('.photo').hide();
-                $('#info05').show();
-                return false;
-            });
         });
     </script>
 
@@ -267,17 +253,18 @@
                 }
             }
         });
-        $(document).ready(function () {
+        document.addEventListener('DOMContentLoaded', function () {
             const parameters = new URLSearchParams(window.location.search);
             const lang = parameters.get('lang') || 'tw';
-            $('.select_lang').val(lang);
-            $('.logo,.goto-home,.goto-01,.goto-02,.goto-03,.goto-04,.goto-05').attr('href', 'index.html?lang=' + lang);
-            $('.goto-06,.back_link').attr('href', 'corporate_governance.html?lang=' + lang);
-            $('.goto-07').attr('href', 'corporate-sustainability.html?lang=' + lang);
+            document.querySelectorAll('.select_lang').forEach(function (el) { el.value = lang; });
+            document.querySelectorAll('.logo,.goto-home,.goto-01,.goto-02,.goto-03,.goto-04,.goto-05').forEach(function (el) { el.setAttribute('href', 'index.html?lang=' + lang); });
+            document.querySelectorAll('.goto-06,.back_link').forEach(function (el) { el.setAttribute('href', 'corporate_governance.html?lang=' + lang); });
+            document.querySelectorAll('.goto-07').forEach(function (el) { el.setAttribute('href', 'corporate-sustainability.html?lang=' + lang); });
+            var container = document.getElementById('container');
             if (lang === 'en') {
-                $('#container').addClass('for-en');
+                if (container) container.classList.add('for-en');
             } else {
-                $('#container').remove('for-en');
+                if (container) container.classList.remove('for-en');
             }
             const datas = getLocalStorage(lang);
             setDalueData(datas, lang);

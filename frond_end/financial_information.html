@@ -20,8 +20,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
     <link rel="manifest" href="images/site.webmanifest">
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css?v=21">
     <!-- Link Swiper's CSS -->
@@ -34,7 +32,7 @@
     <script src="js/dalue.js?v=11"></script>
     <script src="js/wow.js"></script>
     <script>
-        $(function () {
+        document.addEventListener('DOMContentLoaded', function () {
             new WOW().init();
         });
     </script>
@@ -335,17 +333,18 @@
                 }
             }
         });
-        $(document).ready(function () {
+        document.addEventListener('DOMContentLoaded', function () {
             const parameters = new URLSearchParams(window.location.search);
             const lang = parameters.get('lang') || 'tw';
-            $('.select_lang').val(lang);
-            $('.logo,.goto-home,.goto-01,.goto-02,.goto-03,.goto-04,.goto-05').attr('href', 'index.html?lang=' + lang);
-            $('.goto-06,.back_link').attr('href', 'corporate_governance.html?lang=' + lang);
-            $('.goto-07').attr('href', 'corporate-sustainability.html?lang=' + lang);
+            document.querySelectorAll('.select_lang').forEach(function (el) { el.value = lang; });
+            document.querySelectorAll('.logo,.goto-home,.goto-01,.goto-02,.goto-03,.goto-04,.goto-05').forEach(function (el) { el.setAttribute('href', 'index.html?lang=' + lang); });
+            document.querySelectorAll('.goto-06,.back_link').forEach(function (el) { el.setAttribute('href', 'corporate_governance.html?lang=' + lang); });
+            document.querySelectorAll('.goto-07').forEach(function (el) { el.setAttribute('href', 'corporate-sustainability.html?lang=' + lang); });
+            var container = document.getElementById('container');
             if (lang === 'en') {
-                $('#container').addClass('for-en');
+                if (container) container.classList.add('for-en');
             } else {
-                $('#container').remove('for-en');
+                if (container) container.classList.remove('for-en');
             }
             const datas = getLocalStorage(lang);
             setDalueData(datas, lang);
