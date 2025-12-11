@@ -252,13 +252,17 @@
             <!-- cover -->
             <section class="dalue-cont main-cover" id="gotothe-01">
                 <div class="middle-cont">
-                    <h1 class="main-title"></h1>
-                    <p class="r-t-en aboutSlogan_en">
-                        THE BEGINNING<br />
-                        OF ETERNITY
-                    </p>
-                    <div class="img-circle">
-                        <img src="images/circle.svg" />
+                    <div style="width: 50%; float: left;">
+                        <h1 class="main-title"></h1>
+                    </div>
+                    <div style="width: 50%; float: left;">
+                        <div class="img-circle">
+                            <img src="images/circle.svg" />
+                        </div>
+                        <p class="r-t-en aboutSlogan_en">
+                            THE BEGINNING<br />
+                            OF ETERNITY
+                        </p>
                     </div>
                     <div class="text-info">
                         <h2 class="subtitle aboutTitle"></h2>
@@ -286,43 +290,96 @@
                 </div>
             </section>
 
-            <!-- Serve -->
+            <!-- Serve（新版） -->
             <section class="dalue-cont service" id="gotothe-03">
                 <div class="middle-cont">
                     <div class="top-title">
                         <h3 class="service-title">發展項目</h3>
                     </div>
-                    <ul class="tab-title">
-                        <li class="choose" id="tab01"><a>所有項目</a></li>
-                        <li id="tab02"><a>飯店</a></li>
-                        <li id="tab03"><a>旅遊</a></li>
-                        <li id="tab04"><a>綠能</a></li>
-                        <li id="tab05"><a>其他</a></li>
-                    </ul>
-                    <div class="photo" id="info01">
-                        <a href="service_hotel.html?type=hotel&id=1"><img src="images/ser_a01.jpg" /></a>
-                        <a href="service_hotel.html?type=travel&id=1"><img src="images/ser_b01.jpg" /></a>
-                        <a href="service_hotel.html?type=esg&id=1"><img src="images/ser_c01.jpg" /></a>
-                        <a href="service_hotel.html?type=other&id=1"><img src="images/ser_d01.jpg" /></a>
+                    <!-- 圓形分類 -->
+                    <div class="service-circle-wrapper" id="serviceCircleWrapper">
+                        <div class="service-circle" data-target="hotel">
+                            <img src="images/ser_a01.jpg" alt="飯店 Hotel" />
+                            <div class="circle-text">
+                                飯店<br /><span>Hotel</span>
+                            </div>
+                        </div>
+
+                        <div class="service-circle" data-target="travel">
+                            <img src="images/ser_b01.jpg" alt="旅遊 Travel" />
+                            <div class="circle-text">
+                                旅遊<br /><span>Travel</span>
+                            </div>
+                        </div>
+
+                        <div class="service-circle" data-target="esg">
+                            <img src="images/ser_c01.jpg" alt="綠能 Green Energy" />
+                            <div class="circle-text">
+                                綠能<br /><span>Green Energy</span>
+                            </div>
+                        </div>
+
+                        <div class="service-circle" data-target="other">
+                            <img src="images/ser_d01.jpg" alt="其他 Others" />
+                            <div class="circle-text">
+                                其他<br /><span>Others</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="photo" id="info02">
-                        <a href="service_hotel.html?type=hotel&id=1"><img src="images/ser_a01.jpg" /></a>
-                        <a href="service_hotel.html?type=hotel&id=2"><img src="images/ser_a02.jpg" /></a>
-                    </div>
-                    <div class="photo" id="info03">
-                        <a href="service_hotel.html?type=travel&id=1"><img src="images/ser_b01.jpg" /></a>
-                        <a href="service_hotel.html?type=travel&id=2"><img src="images/ser_b02.jpg" /></a>
-                    </div>
-                    <div class="photo" id="info04">
-                        <a href="service_hotel.html?type=esg&id=1"><img src="images/ser_c01.jpg" /></a>
-                        <a href="service_hotel.html?type=esg&id=2"><img src="images/ser_c02.jpg" /></a>
-                    </div>
-                    <div class="photo" id="info05">
-                        <a href="service_hotel.html?type=other&id=1"><img src="images/ser_d01.jpg" /></a>
-                        <a href="service_hotel.html?type=other&id=2"><img src="images/ser_d02.jpg" /></a>
+
+                    <!-- 灰底內文板塊：預設隱藏（CSS 控制），點圓形才顯示 -->
+                    <div class="service-detail-panel" id="serviceDetailPanel">
+                        <!-- 飯店 -->
+                        <div class="service-detail-inner" data-type="hotel">
+                            <div class="detail-grid">
+                                <a href="service_hotel.html?type=hotel&id=1">
+                                    <img src="images/ser_a01.jpg" alt="hotel 1" />
+                                </a>
+                                <a href="service_hotel.html?type=hotel&id=2">
+                                    <img src="images/ser_a02.jpg" alt="hotel 2" />
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 旅遊 -->
+                        <div class="service-detail-inner" data-type="travel">
+                            <div class="detail-grid">
+                                <a href="service_hotel.html?type=travel&id=1">
+                                    <img src="images/ser_b01.jpg" alt="travel 1" />
+                                </a>
+                                <a href="service_hotel.html?type=travel&id=2">
+                                    <img src="images/ser_b02.jpg" alt="travel 2" />
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 綠能 -->
+                        <div class="service-detail-inner" data-type="esg">
+                            <div class="detail-grid">
+                                <a href="service_hotel.html?type=esg&id=1">
+                                    <img src="images/ser_c01.jpg" alt="esg 1" />
+                                </a>
+                                <a href="service_hotel.html?type=esg&id=2">
+                                    <img src="images/ser_c02.jpg" alt="esg 2" />
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 其他 -->
+                        <div class="service-detail-inner" data-type="other">
+                            <div class="detail-grid">
+                                <a href="service_hotel.html?type=other&id=1">
+                                    <img src="images/ser_d01.jpg" alt="other 1" />
+                                </a>
+                                <a href="service_hotel.html?type=other&id=2">
+                                    <img src="images/ser_d02.jpg" alt="other 2" />
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
+
 
             <!-- join us -->
             <section class="dalue-cont join-cover" id="gotothe-04">
@@ -388,7 +445,7 @@
 <!-- AJAX JS -->
 <script src="js/custom.js?v=23"></script>
 <script>
-    const version = "20251122.1"; //data.js修改需要改版號
+    const version = "20251122.5"; //data.js修改需要改版號
     var swiper = new Swiper(".swiper-container", {
         slidesPerView: 3,
         spaceBetween: 30,
@@ -457,7 +514,7 @@
 
             // FIX: APIURL 守衛與相對路徑後備
             var apiBase = typeof APIURL === "string" && APIURL ? APIURL : "";
-            var url = apiBase ? APIURL + "/api/daLue" : "/api/daLue";
+            var url = apiBase ? APIURL + "/api/daLue2" : "/api/daLue2";
 
             var controller = new AbortController();
             var timeoutId = setTimeout(function () { controller.abort(); }, 10000);
@@ -544,5 +601,105 @@
                     setDalueData(window.jsonData, lang);
                 }
             });
+    });
+</script>
+<!-- 圓形互動控制 -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const circles = document.querySelectorAll(".service-circle");
+        const panel = document.querySelector(".service-detail-panel");
+        const allDetails = document.querySelectorAll(".service-detail-inner");
+
+        let stacked = false;
+        let activeCircle = null;
+
+        function isMobile() {
+            return window.innerWidth <= 1024;
+        }
+
+        circles.forEach((circle) => {
+            circle.addEventListener("click", () => {
+                const target = circle.dataset.target;
+
+                /* ==========================
+               ✅ 手機 / 平板模式（無滾筒）
+            ========================== */
+                if (isMobile()) {
+                    if (stacked && activeCircle === circle) {
+                        // ✅ 第二次點同一顆 → 全部恢復
+                        circles.forEach((c) => (c.style.display = "block"));
+                        panel.classList.remove("show");
+                        stacked = false;
+                        activeCircle = null;
+                        return;
+                    }
+
+                    // ✅ 第一次點 → 只留被點那顆
+                    circles.forEach((c) => {
+                        c.style.display = c === circle ? "block" : "none";
+                    });
+
+                    // ✅ 內文顯示控制
+                    allDetails.forEach((block) => {
+                        if (target === "other") {
+                            block.style.display = "block";
+                        } else {
+                            block.style.display =
+                                block.dataset.type === target
+                                    ? "block"
+                                    : "none";
+                        }
+                    });
+
+                    panel.classList.add("show");
+                    stacked = true;
+                    activeCircle = circle;
+                    return;
+                }
+
+                /* ==========================
+               ✅ 桌機模式（原滾筒邏輯）
+            ========================== */
+
+                if (stacked) {
+                    circles.forEach((c) => {
+                        c.style.transform = "translateX(0) rotate(0deg)";
+                        c.style.zIndex = 1;
+                    });
+
+                    panel.classList.remove("show");
+                    stacked = false;
+                    activeCircle = null;
+                    return;
+                }
+
+                const firstRect = circles[0].getBoundingClientRect();
+                const firstCenter = firstRect.left + firstRect.width / 2;
+
+                circles.forEach((c) => {
+                    const rect = c.getBoundingClientRect();
+                    const center = rect.left + rect.width / 2;
+                    const moveX = firstCenter - center;
+
+                    c.style.transform = `translateX(${moveX}px) rotate(360deg)`;
+                    c.style.zIndex = 1;
+                });
+
+                circle.style.zIndex = 20;
+
+                allDetails.forEach((block) => {
+                    if (target === "other") {
+                        block.style.display = "block";
+                    } else {
+                        block.style.display =
+                            block.dataset.type === target ? "block" : "none";
+                    }
+                });
+
+                panel.classList.add("show");
+                stacked = true;
+                activeCircle = circle;
+            });
+        });
     });
 </script>
