@@ -1,151 +1,205 @@
 const APIURL = 'http://13.213.0.131:3009';
-(function ($) {
 
-  $('.select_lang').change(function () {
-    const selectedLang = $(this).val();
-    const pathname = window.location.pathname;
-    const search = window.location.search;
+(function () {
+  // 語言選擇器
+  document.querySelectorAll('.select_lang').forEach(function (el) {
+    el.addEventListener('change', function () {
+      const selectedLang = this.value;
+      const pathname = window.location.pathname;
+      const search = window.location.search;
 
-    const fileName = pathname.substring(pathname.lastIndexOf('/') + 1);
-    let params = '';
-    if (selectedLang === 'en') {
-      if (search === '') {
-        params = '?lang=en';
-      } else {
-        params = search.replace('?lang=tw', '?lang=en');
-      }
-      window.location.href = fileName + params;
-    } else {
-      if (search === '') {
-        params = '?lang=en';
-      } else {
-        params = search.replace('?lang=en', '?lang=tw');
-      }
-      window.location.href = fileName + params;
-    }
-  });
-
-  // 聯絡我們表單
-  $('#contactusForm').on('submit', function (e) {
-    e.preventDefault();
-    const datas = $('#contactusForm').serializeArray();
-    let dataObj = {};
-    for (let i in datas) {
-      dataObj[datas[i].name] = datas[i].value;
-    }
-    console.log(dataObj);
-    $.ajax({
-      url: `${APIURL}/api/daLue/email`,
-      data: { "data": dataObj },
-      type: "POST",
-      dataType: 'json',
-      async: false,
-      success: function (msg) {
-        console.log('ok--', msg);
-        if (msg.code === '1') {
-          alert('送出成功');
-          location.reload();
+      const fileName = pathname.substring(pathname.lastIndexOf('/') + 1);
+      let params = '';
+      if (selectedLang === 'en') {
+        if (search === '') {
+          params = '?lang=en';
         } else {
-          alert('伺服器忙碌中，請稍後再試');
+          params = search.replace('?lang=tw', '?lang=en');
         }
-      },
-      error: function (error) {
-        console.log('err--', error.statusText);
-        alert('伺服器異常，請稍後再試');
+        window.location.href = fileName + params;
+      } else {
+        if (search === '') {
+          params = '?lang=en';
+        } else {
+          params = search.replace('?lang=en', '?lang=tw');
+        }
+        window.location.href = fileName + params;
       }
     });
   });
 
-})(jQuery);
+  // 聯絡我們表單
+  const contactForm = document.getElementById('contactusForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formData = new FormData(contactForm);
+      let dataObj = {};
+      formData.forEach(function (value, key) {
+        dataObj[key] = value;
+      });
+      console.log(dataObj);
+
+      fetch(`${APIURL}/api/daLue/email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ data: dataObj }),
+      })
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (msg) {
+          console.log('ok--', msg);
+          if (msg.code === '1') {
+            alert('送出成功');
+            location.reload();
+          } else {
+            alert('伺服器忙碌中，請稍後再試');
+          }
+        })
+        .catch(function (error) {
+          console.log('err--', error);
+          alert('伺服器異常，請稍後再試');
+        });
+    });
+  }
+})();
 
 function setDalueData(msg, lang) {
   console.log('setDalueData--', msg);
-  $('.goto-home').html(msg.goto_home);
-  $('.goto-01').html(msg.goto_01);
-  $('.goto-02').html(msg.goto_02);
-  $('.goto-03').html(msg.goto_03);
-  $('.goto-04').html(msg.goto_04);
-  $('.goto-05').html(msg.goto_05);
-  $('.goto-06').html(msg.goto_06);
-  $('.goto-06-01').html(msg.goto_06_01);
-  $('.goto-06-02').html(msg.goto_06_02);
-  $('.goto-07').html(msg.goto_07);
-  $('.new-title').html(msg.new_title);
-  $('.service-title').html(msg.service_title);
-  $('#tab01 a').html(msg.tab01);
-  $('#tab02 a').html(msg.tab02);
-  $('#tab03 a').html(msg.tab03);
-  $('#tab04 a').html(msg.tab04);
-  $('#tab05 a').html(msg.tab05);
-  $('.join-us-tw').html(msg.join_us_tw);
-  $('.label-name').html(msg.label_name);
-  $('.label-phone').html(msg.label_phone);
-  $('.label-email').html(msg.label_email);
-  $('.label-content').html(msg.label_content);
-  $('#content').attr("placeholder", msg.placeholder);
-  $('.submit').html(msg.submit);
 
-  $('.titleContents-a01 span').html(msg.titleContents_a01);
-  $('.titleContents-a02 span').html(msg.titleContents_a02);
-  $('.titleContents-a03 span').html(msg.titleContents_a03);
-  $('.titleContents-a04 span').html(msg.titleContents_a04);
-  $('.titleContents-a05 span').html(msg.titleContents_a05);
-  $('.titleContents-a06 span').html(msg.titleContents_a06);
-  $('.titleContents-a07 span').html(msg.titleContents_a07);
+  // Helper function to set innerHTML for multiple elements
+  function setHtml(selector, content) {
+    document.querySelectorAll(selector).forEach(function (el) {
+      el.innerHTML = content;
+    });
+  }
 
-  $('.titleContents-b01 span').html(msg.titleContents_b01);
-  $('.titleContents-b02 span').html(msg.titleContents_b02);
-  $('.titleContents-b03 span').html(msg.titleContents_b03);
-  $('.titleContents-b04 span').html(msg.titleContents_b04);
-  $('.titleContents-b05 span').html(msg.titleContents_b05);
-  $('.titleContents-b06 span').html(msg.titleContents_b06);
+  // Helper function to set attribute
+  function setAttr(selector, attr, value) {
+    const el = document.querySelector(selector);
+    if (el) el.setAttribute(attr, value);
+  }
 
-  $('#investor_relations .main-title span').html(msg.investor_relations.main_title);
-  $('.table1-title').html(msg.investor_relations.table1_title);
-  $('.table1-th-01').html(msg.investor_relations.table1_th_01);
-  $('.table1-td-01').html(msg.investor_relations.table1_td_01);
-  $('.table1-th-02').html(msg.investor_relations.table1_th_02);
-  $('.table1-td-02').html(msg.investor_relations.table1_td_02);
-  $('.table1-th-03').html(msg.investor_relations.table1_th_03);
-  $('.table1-td-03').html(msg.investor_relations.table1_td_03);
-  $('.table1-th-04').html(msg.investor_relations.table1_th_04);
-  $('.table1-td-04').html(msg.investor_relations.table1_td_04);
-  $('.table2-title').html(msg.investor_relations.table2_title);
-  $('.table2-th-01').html(msg.investor_relations.table2_th_01);
-  $('.table2-td-01').html(msg.investor_relations.table2_td_01);
-  $('.table2-td-02').html(msg.investor_relations.table2_td_02);
-  $('.table2-td-03').html(msg.investor_relations.table2_td_03);
+  setHtml('.goto-home', msg.goto_home);
+  setHtml('.goto-01', msg.goto_01);
+  setHtml('.goto-02', msg.goto_02);
+  setHtml('.goto-03', msg.goto_03);
+  setHtml('.goto-04', msg.goto_04);
+  setHtml('.goto-05', msg.goto_05);
+  setHtml('.goto-06', msg.goto_06);
+  setHtml('.goto-06-01', msg.goto_06_01);
+  setHtml('.goto-06-02', msg.goto_06_02);
+  setHtml('.goto-07', msg.goto_07);
+  setHtml('.new-title', msg.new_title);
+  setHtml('.service-title', msg.service_title);
 
-  $('#corporate_sustainability .main-title span').html(msg.corporate_sustainability.main_title);
-  $('.text1-title').html(msg.corporate_sustainability.text1_title);
-  $('.text1-content').html(msg.corporate_sustainability.text1_content);
-  $('.text2-title').html(msg.corporate_sustainability.text2_title);
-  $('.disc-01').html(msg.corporate_sustainability.disc_01);
-  $('.disc-02').html(msg.corporate_sustainability.disc_02);
-  $('.disc-03').html(msg.corporate_sustainability.disc_03);
+  const tab01a = document.querySelector('#tab01 a');
+  if (tab01a) tab01a.innerHTML = msg.tab01;
+  const tab02a = document.querySelector('#tab02 a');
+  if (tab02a) tab02a.innerHTML = msg.tab02;
+  const tab03a = document.querySelector('#tab03 a');
+  if (tab03a) tab03a.innerHTML = msg.tab03;
+  const tab04a = document.querySelector('#tab04 a');
+  if (tab04a) tab04a.innerHTML = msg.tab04;
+  const tab05a = document.querySelector('#tab05 a');
+  if (tab05a) tab05a.innerHTML = msg.tab05;
 
-  $('#company_img').attr('src', msg.company_img);
-  $('.corporate_title1').html(msg.corporate_title1);
-  $('.corporate_title2').html(msg.corporate_title2);
-  $('#functional_committees .content').html(msg.functional_committees.content);
-  $('#functional_committees .main-title').html(msg.functional_committees.main_title);
-  $('#financial_information .main-title span').html(msg.financial_information.main_title);
-  $('#financial_information .table-td .a1').html(msg.financial_information.table_td_a1);
-  $('#financial_information .table-td .a2').html(msg.financial_information.table_td_a2);
-  $('#financial_information .table-td .a3').html(msg.financial_information.table_td_a3);
-  $('#financial_information .table-td .a4').html(msg.financial_information.table_td_a4);
-  $('#financial_information .table-td .abook').html(msg.financial_information.table_td_abook);
+  setHtml('.join-us-tw', msg.join_us_tw);
+  setHtml('.label-name', msg.label_name);
+  setHtml('.label-phone', msg.label_phone);
+  setHtml('.label-email', msg.label_email);
+  setHtml('.label-content', msg.label_content);
+
+  const contentEl = document.getElementById('content');
+  if (contentEl) contentEl.setAttribute('placeholder', msg.placeholder);
+
+  setHtml('.submit', msg.submit);
+
+  setHtml('.titleContents-a01 span', msg.titleContents_a01);
+  setHtml('.titleContents-a02 span', msg.titleContents_a02);
+  setHtml('.titleContents-a03 span', msg.titleContents_a03);
+  setHtml('.titleContents-a04 span', msg.titleContents_a04);
+  setHtml('.titleContents-a05 span', msg.titleContents_a05);
+  setHtml('.titleContents-a06 span', msg.titleContents_a06);
+  setHtml('.titleContents-a07 span', msg.titleContents_a07);
+
+  setHtml('.titleContents-b01 span', msg.titleContents_b01);
+  setHtml('.titleContents-b02 span', msg.titleContents_b02);
+  setHtml('.titleContents-b03 span', msg.titleContents_b03);
+  setHtml('.titleContents-b04 span', msg.titleContents_b04);
+  setHtml('.titleContents-b05 span', msg.titleContents_b05);
+  setHtml('.titleContents-b06 span', msg.titleContents_b06);
+
+  const investorTitle = document.querySelector('#investor_relations .main-title span');
+  if (investorTitle) investorTitle.innerHTML = msg.investor_relations.main_title;
+
+  setHtml('.table1-title', msg.investor_relations.table1_title);
+  setHtml('.table1-th-01', msg.investor_relations.table1_th_01);
+  setHtml('.table1-td-01', msg.investor_relations.table1_td_01);
+  setHtml('.table1-th-02', msg.investor_relations.table1_th_02);
+  setHtml('.table1-td-02', msg.investor_relations.table1_td_02);
+  setHtml('.table1-th-03', msg.investor_relations.table1_th_03);
+  setHtml('.table1-td-03', msg.investor_relations.table1_td_03);
+  setHtml('.table1-th-04', msg.investor_relations.table1_th_04);
+  setHtml('.table1-td-04', msg.investor_relations.table1_td_04);
+  setHtml('.table2-title', msg.investor_relations.table2_title);
+  setHtml('.table2-th-01', msg.investor_relations.table2_th_01);
+  setHtml('.table2-td-01', msg.investor_relations.table2_td_01);
+  setHtml('.table2-td-02', msg.investor_relations.table2_td_02);
+  setHtml('.table2-td-03', msg.investor_relations.table2_td_03);
+
+  const csTitle = document.querySelector('#corporate_sustainability .main-title span');
+  if (csTitle) csTitle.innerHTML = msg.corporate_sustainability.main_title;
+
+  setHtml('.text1-title', msg.corporate_sustainability.text1_title);
+  setHtml('.text1-content', msg.corporate_sustainability.text1_content);
+  setHtml('.text2-title', msg.corporate_sustainability.text2_title);
+  setHtml('.disc-01', msg.corporate_sustainability.disc_01);
+  setHtml('.disc-02', msg.corporate_sustainability.disc_02);
+  setHtml('.disc-03', msg.corporate_sustainability.disc_03);
+
+  setAttr('#company_img', 'src', msg.company_img);
+  setHtml('.corporate_title1', msg.corporate_title1);
+  setHtml('.corporate_title2', msg.corporate_title2);
+
+  const fcContent = document.querySelector('#functional_committees .content');
+  if (fcContent) fcContent.innerHTML = msg.functional_committees.content;
+  const fcTitle = document.querySelector('#functional_committees .main-title');
+  if (fcTitle) fcTitle.innerHTML = msg.functional_committees.main_title;
+
+  const fiTitle = document.querySelector('#financial_information .main-title span');
+  if (fiTitle) fiTitle.innerHTML = msg.financial_information.main_title;
+
+  document.querySelectorAll('#financial_information .table-td .a1').forEach(function (el) {
+    el.innerHTML = msg.financial_information.table_td_a1;
+  });
+  document.querySelectorAll('#financial_information .table-td .a2').forEach(function (el) {
+    el.innerHTML = msg.financial_information.table_td_a2;
+  });
+  document.querySelectorAll('#financial_information .table-td .a3').forEach(function (el) {
+    el.innerHTML = msg.financial_information.table_td_a3;
+  });
+  document.querySelectorAll('#financial_information .table-td .a4').forEach(function (el) {
+    el.innerHTML = msg.financial_information.table_td_a4;
+  });
+  document.querySelectorAll('#financial_information .table-td .abook').forEach(function (el) {
+    el.innerHTML = msg.financial_information.table_td_abook;
+  });
 
   if (msg.about) {
-    $('#gotothe-01 .main-title').html(msg.about.slogan);
-    $('.aboutSlogan_en').html(msg.about.slogan_en);
-    $('.aboutTitle').html(msg.about.title);
-    $('.aboutText').html(msg.about.text);
+    const aboutTitle = document.querySelector('#gotothe-01 .main-title');
+    if (aboutTitle) aboutTitle.innerHTML = msg.about.slogan;
+    setHtml('.aboutSlogan_en', msg.about.slogan_en);
+    setHtml('.aboutTitle', msg.about.title);
+    setHtml('.aboutText', msg.about.text);
   }
+
   if (msg.news && msg.news.length > 0) {
     let newsHtml = '';
     for (let i in msg.news) {
-      // 取msg.news[i].text內的第一個<p></p>
       const match = msg.news[i].text.match(/<p>(.*?)<\/p>/);
       const firstText = match ? match[1] : "";
       newsHtml += `
@@ -159,8 +213,10 @@ function setDalueData(msg, lang) {
           </a>
           `;
     }
-    $('#news_list').html(newsHtml);
+    const newsList = document.getElementById('news_list');
+    if (newsList) newsList.innerHTML = newsHtml;
   }
+
   if (msg.service) {
     let allHtml = '';
     if (msg.service.hotel.length > 0) {
@@ -169,7 +225,8 @@ function setDalueData(msg, lang) {
         newsHtml += `<a href="service_hotel.html?lang=${lang}&type=hotel&id=${msg.service.hotel[i].id}"><img src="${msg.service.hotel[i].img}"></a>`;
         if (i == 0) allHtml += newsHtml;
       }
-      $('#info02').html(newsHtml);
+      const info02 = document.getElementById('info02');
+      if (info02) info02.innerHTML = newsHtml;
     }
     if (msg.service.travel.length > 0) {
       let newsHtml = '';
@@ -177,7 +234,8 @@ function setDalueData(msg, lang) {
         newsHtml += `<a href="service_hotel.html?lang=${lang}&type=travel&id=${msg.service.travel[i].id}"><img src="${msg.service.travel[i].img}"></a>`;
         if (i == 0) allHtml += newsHtml;
       }
-      $('#info03').html(newsHtml);
+      const info03 = document.getElementById('info03');
+      if (info03) info03.innerHTML = newsHtml;
     }
     if (msg.service.esg.length > 0) {
       let newsHtml = '';
@@ -185,7 +243,8 @@ function setDalueData(msg, lang) {
         newsHtml += `<a href="service_hotel.html?lang=${lang}&type=esg&id=${msg.service.esg[i].id}"><img src="${msg.service.esg[i].img}"></a>`;
         if (i == 0) allHtml += newsHtml;
       }
-      $('#info04').html(newsHtml);
+      const info04 = document.getElementById('info04');
+      if (info04) info04.innerHTML = newsHtml;
     }
     if (msg.service.other.length > 0) {
       let newsHtml = '';
@@ -193,9 +252,11 @@ function setDalueData(msg, lang) {
         newsHtml += `<a href="service_hotel.html?lang=${lang}&type=other&id=${msg.service.other[i].id}"><img src="${msg.service.other[i].img}"></a>`;
         if (i == 0) allHtml += newsHtml;
       }
-      $('#info05').html(newsHtml);
+      const info05 = document.getElementById('info05');
+      if (info05) info05.innerHTML = newsHtml;
     }
-    $('#info01').html(allHtml);
+    const info01 = document.getElementById('info01');
+    if (info01) info01.innerHTML = allHtml;
   }
 }
 
@@ -207,14 +268,12 @@ function setLocalStorage(datas) {
     console.log(`JSON 資料已成功儲存到 localStorage, Key: ${keyName}`);
   } catch (e) {
     console.error("儲存到 localStorage 失敗:", e);
-    // 常見失敗原因：儲存空間已滿 (Quota Exceeded Error)
   }
 }
 
 function getLocalStorage(locale) {
   const keyName = 'dalue_datas';
   const jsonString = localStorage.getItem(keyName);
-  // 檢查是否有資料
   if (jsonString) {
     try {
       const retrievedObject = JSON.parse(jsonString);
@@ -232,4 +291,3 @@ function getLocalStorage(locale) {
     console.log(`在 localStorage 中找不到 Key: ${keyName} 的資料。`);
   }
 }
-
