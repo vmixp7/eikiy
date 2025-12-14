@@ -95,6 +95,8 @@ function setDalueData(msg, lang) {
   setHtml('.goto-07', msg.goto_07);
   setHtml('.new-title', msg.new_title);
   setHtml('.service-title', msg.service_title);
+  setHtml('.join-title', msg.goto_04);
+  setHtml('.contactus-title', msg.goto_05);
 
   const tab01a = document.querySelector('#tab01 a');
   if (tab01a) tab01a.innerHTML = msg.tab01;
@@ -206,9 +208,6 @@ function setDalueData(msg, lang) {
           <a class="swiper-slide" href="news.html?lang=${lang}&id=${msg.news[i].id}">
               <div class="img">
                   <img src="${msg.news[i].img}" width="100%" alt="">
-              </div>
-              <div class="text">
-                  <p>${firstText}</p>
               </div>
           </a>
           `;
