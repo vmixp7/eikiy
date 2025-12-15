@@ -1695,7 +1695,7 @@ hr {
 }
 
 .service-circle {
-  width: min(46vw, 240px);
+  width: min(46vw, 260px);
   /* ✅ RWD 不變形 */
   aspect-ratio: 1 / 1;
   /* ✅ 永遠正圓 */
