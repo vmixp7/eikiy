@@ -727,7 +727,7 @@ hr {
 .dalue-container .main-cover {
   position: relative;
   padding: 120px 20px 80px 20px;
-  background-image: url('../images/bg_01.jpg');
+  background-image: url('../images/banner.jpg');
   background-color: #699780;
   background-size: cover;
   height: 760px;
@@ -1111,7 +1111,7 @@ hr {
 }
 
 .dalue-container .form-cont .logo img {
-  width: 100%;
+  width: 70%;
 }
 
 .dalue-container .form-cont .contactus {
