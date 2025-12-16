@@ -154,7 +154,7 @@
     </script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css?v=22" />
+    <link rel="stylesheet" href="css/style.css?v=24" />
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -162,7 +162,7 @@
     <link rel="stylesheet" href="mobilemenu/pushy.css" />
 
     <!-- animate -->
-    <script src="js/dalue.js?v=12"></script>
+    <script src="js/dalue.js?v=24"></script>
     <script src="js/wow.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -472,11 +472,11 @@
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <!-- sample data JS -->
-<script src="js/data.js?v=18"></script>
+<script src="js/data.js?v=24"></script>
 <!-- AJAX JS -->
-<script src="js/custom.js?v=23"></script>
+<script src="js/custom.js?v=24"></script>
 <script>
-    const version = "20251122.5"; //data.js修改需要改版號
+    const version = "20251216.2"; //data.js修改需要改版號
     var swiper = new Swiper(".swiper-container", {
         slidesPerView: 3,
         spaceBetween: 30,
@@ -545,7 +545,7 @@
 
             // FIX: APIURL 守衛與相對路徑後備
             var apiBase = typeof APIURL === "string" && APIURL ? APIURL : "";
-            var url = apiBase ? APIURL + "/api/daLue2" : "/api/daLue2";
+            var url = apiBase ? APIURL + "/api/daLue" : "/api/daLue";
 
             var controller = new AbortController();
             var timeoutId = setTimeout(function () { controller.abort(); }, 10000);
