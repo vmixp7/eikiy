@@ -254,7 +254,7 @@ const jsonData = {
     "titleContents_b05": "Stock Price Information",
     "titleContents_b06": "Service Operations",
     "about": {
-      "slogan": "<span>The starting point of</span><br>sustainable living",
+      "slogan": "<span>TThe starting point of sustainable living</span>",
       "slogan_en": "THE BEGINNING<br> OF ETERNITY",
       "title": "Da-Lueh International Holding Co., Ltd.",
       "text": "<p>Starting with the hotel business, we have gradually expanded into various green sectors, guided by professional management and excellent service.</p><p>Facing the rapidly changing global industries and the trend of sustainable development, we incorporate green thinking, innovative technology, and cross-sector collaboration. We not only provide a comfortable living experience but also create a comprehensive platform that integrates sustainability, culture, and life.</p><p>With the core spirit of 'Sustainable Management, Innovative Breakthrough, Co-existence and Co-prosperity,' Da-Lueh International Holding is committed to becoming a benchmark enterprise that leads industry transformation and creates social value.</p>"

@@ -69,7 +69,7 @@
                             }
                         ],
                         "url": "https://www.dalue.com.tw/",
-                        "logo": "https://www.dalue.com.tw/images/logo.png",
+                        "logo": "https://www.dalue.com.tw/images/head_logo.png",
                         "brand": "大略國際",
                         "sameAs": [
                             "https://www.linkedin.com/company/dalue",
@@ -154,7 +154,7 @@
     </script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css?v=24" />
+    <link rel="stylesheet" href="css/style.css?v=26" />
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -162,7 +162,7 @@
     <link rel="stylesheet" href="mobilemenu/pushy.css" />
 
     <!-- animate -->
-    <script src="js/dalue.js?v=24"></script>
+    <script src="js/dalue.js?v=26"></script>
     <script src="js/wow.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -224,7 +224,7 @@
         <header class="dalue-header">
             <div class="middle-cont">
                 <a class="logo" href="index.html">
-                    <img src="images/logo.png" alt="大略國際" />
+                    <img src="images/head_logo.png" alt="大略國際" />
                 </a>
                 <nav class="menu">
                     <ul>
@@ -423,7 +423,7 @@
 
                     <div class="form-cont">
                         <div class="logo">
-                            <img src="images/black_logo.png" alt="大略國際" />
+                            <img src="images/form_logo.png" alt="大略國際" />
                         </div>
                         <form class="contactus" id="contactusForm" data-toggle="validator" role="form">
                             <fieldset>
@@ -461,8 +461,16 @@
                     </div>
                 </div>
             </section>
-            <section class="banner_foot"></section>
         </main>
+        <!-- footer -->
+        <footer class="footer-cont">
+            <div class="middle-cont">
+                <div class="logo-s">
+                    <img src="images/head_logo.png" alt="大略國際">
+                </div>
+                <p class="copyright">Copyright © 2025 大略國際 All rights reserved.</p>
+            </div>
+        </footer>
     </div>
 </body>
 
@@ -472,11 +480,11 @@
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <!-- sample data JS -->
-<script src="js/data.js?v=24"></script>
+<script src="js/data.js?v=26"></script>
 <!-- AJAX JS -->
-<script src="js/custom.js?v=24"></script>
+<script src="js/custom.js?v=26"></script>
 <script>
-    const version = "20251216.2"; //data.js修改需要改版號
+    const version = "20251216.3"; //data.js修改需要改版號
     var swiper = new Swiper(".swiper-container", {
         slidesPerView: 3,
         spaceBetween: 30,
@@ -545,7 +553,7 @@
 
             // FIX: APIURL 守衛與相對路徑後備
             var apiBase = typeof APIURL === "string" && APIURL ? APIURL : "";
-            var url = apiBase ? APIURL + "/api/daLue" : "/api/daLue";
+            var url = apiBase ? APIURL + "/api/daLue2" : "/api/daLue2";
 
             var controller = new AbortController();
             var timeoutId = setTimeout(function () { controller.abort(); }, 10000);
