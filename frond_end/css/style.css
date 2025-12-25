@@ -762,7 +762,8 @@ hr {
 }
 
 .for-en .dalue-container .main-cover {
-  height: 1200px;
+  height: auto;
+  min-height: 1200px;
 }
 
 .banner_foot {
@@ -826,7 +827,8 @@ hr {
 
 @media all and (max-width: 1200px) {
   .for-en .dalue-container .main-cover {
-    height: 1400px;
+    height: auto;
+    min-height: 1400px;
   }
 
   .dalue-container .main-cover {
@@ -1025,7 +1027,8 @@ hr {
 
 @media all and (max-width: 720px) {
   .for-en .dalue-container .main-cover {
-    height: 1500px;
+    height: auto;
+    min-height: 1500px;
   }
 
   .dalue-container .service .photo {
@@ -1766,7 +1769,8 @@ hr {
 
 @media (max-width: 650px) {
   .for-en .dalue-container .main-cover {
-    height: 1500px;
+    height: auto;
+    min-height: 1500px;
   }
 
   .for-en .dalue-container .main-cover h1.main-title {
@@ -1800,7 +1804,8 @@ hr {
   }
 
   .for-en .dalue-container .main-cover {
-    height: 1400px;
+    height: auto;
+    min-height: 1400px;
   }
 
   .dalue-container .main-cover .img-circle img {
@@ -1855,18 +1860,6 @@ hr {
   }
 }
 
-@media (max-width: 470px) {
-  .for-en .dalue-container .main-cover {
-    height: 1500px;
-  }
-}
-
-@media (max-width: 450px) {
-  .for-en .dalue-container .main-cover {
-    height: 1600px;
-  }
-}
-
 @media (max-width: 430px) {
   .dalue-container .main-cover .img-circle img {
     max-width: 50%;
@@ -1876,9 +1869,6 @@ hr {
 }
 
 @media (max-width: 415px) {
-  .for-en .dalue-container .main-cover {
-    height: 1650px;
-  }
 
   .for-en .dalue-container .main-cover h1.main-title {
     font-size: 30px;
@@ -1891,18 +1881,5 @@ hr {
   .dalue-container .main-cover .img-circle img {
     left: -140px;
     top: 0px;
-  }
-}
-
-
-@media (max-width: 380px) {
-  .for-en .dalue-container .main-cover {
-    height: 1900px;
-  }
-}
-
-@media (max-width: 360px) {
-  .for-en .dalue-container .main-cover {
-    height: 2000px;
   }
 }
