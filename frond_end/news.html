@@ -232,9 +232,22 @@
         const id = parameters.get('id');
         const lang = parameters.get('lang') || 'tw';
         document.querySelectorAll('.select_lang').forEach(function (el) { el.value = lang; });
-        document.querySelectorAll('.logo,.goto-home,.goto-01,.goto-02,.goto-03,.goto-04,.goto-05,.back_link').forEach(function (el) { el.setAttribute('href', 'index.html?lang=' + lang); });
+        document.querySelectorAll('.logo,.goto-home,.goto-01,.goto-02,.goto-03,.goto-04,.goto-05').forEach(function (el) { el.setAttribute('href', 'index.html?lang=' + lang); });
         document.querySelectorAll('.goto-06').forEach(function (el) { el.setAttribute('href', 'corporate_governance.html?lang=' + lang); });
         document.querySelectorAll('.goto-07').forEach(function (el) { el.setAttribute('href', 'corporate-sustainability.html?lang=' + lang); });
+
+        // 智能返回按鈕：根據 from 參數判斷上一頁
+        var backLink = document.querySelector('.back_link');
+        if (backLink) {
+            var from = parameters.get('from');
+            if (from === 'list') {
+                // 如果是從新聞列表頁進來，返回新聞列表頁
+                backLink.setAttribute('href', 'news_list.html?lang=' + lang);
+            } else {
+                // 否則返回首頁
+                backLink.setAttribute('href', 'index.html?lang=' + lang);
+            }
+        }
 
         var container = document.getElementById('container');
         if (lang === 'en') {

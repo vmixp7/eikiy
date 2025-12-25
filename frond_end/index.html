@@ -296,7 +296,9 @@
                             <div id="news_list" class="swiper-wrapper"></div>
                         </div>
                     </div>
-                    <div class="news_more">more...</div>
+                    <div class="news_more">
+                        <a class="news_list" href="news_list.html">more...</a>
+                    </div>
                 </div>
             </section>
 
@@ -306,35 +308,35 @@
             <section class="dalue-cont service" id="gotothe-03">
                 <div class="middle-cont">
                     <div class="top-title">
-                        <h3 class="service-title">發展項目</h3>
+                        <h3 class="service-title"></h3>
                     </div>
                     <!-- 圓形分類 -->
                     <div class="service-circle-wrapper" id="serviceCircleWrapper">
                         <div class="service-circle" data-target="hotel">
                             <img src="images/ser_a01.jpg" alt="飯店 Hotel" />
                             <div class="circle-text">
-                                飯店<br /><span>Hotel</span>
+                                Hotel
                             </div>
                         </div>
 
                         <div class="service-circle" data-target="travel">
                             <img src="images/ser_b01.jpg" alt="旅遊 Travel" />
                             <div class="circle-text">
-                                旅遊<br /><span>Travel</span>
+                                Travel
                             </div>
                         </div>
 
                         <div class="service-circle" data-target="esg">
                             <img src="images/ser_c01.jpg" alt="綠能 Green Energy" />
                             <div class="circle-text">
-                                綠能<br /><span>Green Energy</span>
+                                Green<br>Energy
                             </div>
                         </div>
 
                         <div class="service-circle" data-target="other">
                             <img src="images/ser_d01.jpg" alt="其他 Others" />
                             <div class="circle-text">
-                                其他<br /><span>Others</span>
+                                Others
                             </div>
                         </div>
                     </div>
@@ -343,49 +345,49 @@
                     <div class="service-detail-panel" id="serviceDetailPanel">
                         <!-- 飯店 -->
                         <div class="service-detail-inner" data-type="hotel">
-                            <div class="detail-grid">
-                                <a href="service_hotel.html?type=hotel&id=1">
+                            <div class="detail-grid" id="service_hotel">
+                                <!-- <a href="service_hotel.html?type=hotel&id=1">
                                     <img src="images/ser_a01.jpg" alt="hotel 1" />
                                 </a>
                                 <a href="service_hotel.html?type=hotel&id=2">
                                     <img src="images/ser_a02.jpg" alt="hotel 2" />
-                                </a>
+                                </a> -->
                             </div>
                         </div>
 
                         <!-- 旅遊 -->
                         <div class="service-detail-inner" data-type="travel">
-                            <div class="detail-grid">
-                                <a href="service_hotel.html?type=travel&id=1">
+                            <div class="detail-grid" id="service_travel">
+                                <!-- <a href="service_hotel.html?type=travel&id=1">
                                     <img src="images/ser_b01.jpg" alt="travel 1" />
                                 </a>
                                 <a href="service_hotel.html?type=travel&id=2">
                                     <img src="images/ser_b02.jpg" alt="travel 2" />
-                                </a>
+                                </a> -->
                             </div>
                         </div>
 
                         <!-- 綠能 -->
                         <div class="service-detail-inner" data-type="esg">
-                            <div class="detail-grid">
-                                <a href="service_hotel.html?type=esg&id=1">
+                            <div class="detail-grid" id="service_esg">
+                                <!-- <a href="service_hotel.html?type=esg&id=1">
                                     <img src="images/ser_c01.jpg" alt="esg 1" />
                                 </a>
                                 <a href="service_hotel.html?type=esg&id=2">
                                     <img src="images/ser_c02.jpg" alt="esg 2" />
-                                </a>
+                                </a> -->
                             </div>
                         </div>
 
                         <!-- 其他 -->
                         <div class="service-detail-inner" data-type="other">
-                            <div class="detail-grid">
-                                <a href="service_hotel.html?type=other&id=1">
+                            <div class="detail-grid" id="service_other">
+                                <!-- <a href="service_hotel.html?type=other&id=1">
                                     <img src="images/ser_d01.jpg" alt="other 1" />
                                 </a>
                                 <a href="service_hotel.html?type=other&id=2">
                                     <img src="images/ser_d02.jpg" alt="other 2" />
-                                </a>
+                                </a> -->
                             </div>
                         </div>
                     </div>
@@ -606,6 +608,9 @@
         document.querySelectorAll(".goto-07").forEach(function (el) {
             el.setAttribute("href", "corporate-sustainability.html?lang=" + lang);
         });
+        document.querySelectorAll(".news_list").forEach(function (el) {
+            el.setAttribute("href", "news_list.html?lang=" + lang);
+        });
 
         var container = document.getElementById("container");
         if (lang === "en") {
@@ -680,14 +685,10 @@
 
                     // ✅ 內文顯示控制
                     allDetails.forEach((block) => {
-                        if (target === "other") {
-                            block.style.display = "block";
-                        } else {
-                            block.style.display =
-                                block.dataset.type === target
-                                    ? "block"
-                                    : "none";
-                        }
+                        block.style.display =
+                            block.dataset.type === target
+                                ? "block"
+                                : "none";
                     });
 
                     panel.classList.add("show");
@@ -727,12 +728,8 @@
                 circle.style.zIndex = 20;
 
                 allDetails.forEach((block) => {
-                    if (target === "other") {
-                        block.style.display = "block";
-                    } else {
-                        block.style.display =
-                            block.dataset.type === target ? "block" : "none";
-                    }
+                    block.style.display =
+                        block.dataset.type === target ? "block" : "none";
                 });
 
                 panel.classList.add("show");

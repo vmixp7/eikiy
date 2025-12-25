@@ -224,7 +224,7 @@ function setDalueData(msg, lang) {
         newsHtml += `<a href="service_hotel.html?lang=${lang}&type=hotel&id=${msg.service.hotel[i].id}"><img src="${msg.service.hotel[i].img}"></a>`;
         if (i == 0) allHtml += newsHtml;
       }
-      const info02 = document.getElementById('info02');
+      const info02 = document.getElementById('service_hotel');
       if (info02) info02.innerHTML = newsHtml;
     }
     if (msg.service.travel.length > 0) {
@@ -233,7 +233,7 @@ function setDalueData(msg, lang) {
         newsHtml += `<a href="service_hotel.html?lang=${lang}&type=travel&id=${msg.service.travel[i].id}"><img src="${msg.service.travel[i].img}"></a>`;
         if (i == 0) allHtml += newsHtml;
       }
-      const info03 = document.getElementById('info03');
+      const info03 = document.getElementById('service_travel');
       if (info03) info03.innerHTML = newsHtml;
     }
     if (msg.service.esg.length > 0) {
@@ -242,7 +242,7 @@ function setDalueData(msg, lang) {
         newsHtml += `<a href="service_hotel.html?lang=${lang}&type=esg&id=${msg.service.esg[i].id}"><img src="${msg.service.esg[i].img}"></a>`;
         if (i == 0) allHtml += newsHtml;
       }
-      const info04 = document.getElementById('info04');
+      const info04 = document.getElementById('service_esg');
       if (info04) info04.innerHTML = newsHtml;
     }
     if (msg.service.other.length > 0) {
@@ -251,11 +251,11 @@ function setDalueData(msg, lang) {
         newsHtml += `<a href="service_hotel.html?lang=${lang}&type=other&id=${msg.service.other[i].id}"><img src="${msg.service.other[i].img}"></a>`;
         if (i == 0) allHtml += newsHtml;
       }
-      const info05 = document.getElementById('info05');
+      const info05 = document.getElementById('service_other');
       if (info05) info05.innerHTML = newsHtml;
     }
-    const info01 = document.getElementById('info01');
-    if (info01) info01.innerHTML = allHtml;
+    // const info01 = document.getElementById('info01');
+    // if (info01) info01.innerHTML = allHtml;
   }
 }
 
