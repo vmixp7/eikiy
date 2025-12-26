@@ -97,6 +97,9 @@ function setDalueData(msg, lang) {
   setHtml('.service-title', msg.service_title);
   setHtml('.join-title', msg.goto_04);
   setHtml('.contactus-title', msg.goto_05);
+  if (lang === 'en') {
+    setHtml('.circle-text span', '');
+  }
 
   const tab01a = document.querySelector('#tab01 a');
   if (tab01a) tab01a.innerHTML = msg.tab01;
