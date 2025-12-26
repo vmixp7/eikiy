@@ -154,7 +154,7 @@
     </script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css?v=27" />
+    <link rel="stylesheet" href="css/style.css?v=28" />
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -162,7 +162,7 @@
     <link rel="stylesheet" href="mobilemenu/pushy.css" />
 
     <!-- animate -->
-    <script src="js/dalue.js?v=27"></script>
+    <script src="js/dalue.js?v=28"></script>
     <script src="js/wow.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -297,7 +297,7 @@
                         </div>
                     </div>
                     <div class="news_more">
-                        <a class="news_list" href="news_list.html">more...</a>
+                        <a class="news_list news-more-text" href="news_list.html"></a>
                     </div>
                 </div>
             </section>
@@ -458,9 +458,9 @@
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <!-- sample data JS -->
-<script src="js/data.js?v=27"></script>
+<script src="js/data.js?v=28"></script>
 <!-- AJAX JS -->
-<script src="js/custom.js?v=27"></script>
+<script src="js/custom.js?v=28"></script>
 <script>
     const version = "20251225.1"; //data.js修改需要改版號
     var swiper = new Swiper(".swiper-container", {
@@ -586,6 +586,11 @@
         });
         document.querySelectorAll(".news_list").forEach(function (el) {
             el.setAttribute("href", "news_list.html?lang=" + lang);
+        });
+
+        // 設置 more 按鈕的中英文文字
+        document.querySelectorAll(".news-more-text").forEach(function (el) {
+            el.textContent = lang === 'en' ? 'View Details' : '查看詳情';
         });
 
         var container = document.getElementById("container");
